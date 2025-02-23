@@ -43,7 +43,7 @@ Swagger proporciona una interfaz interactiva para explorar y probar los endpoint
 
 ## 🛠️ Herramientas de Desarrollo
 
-- **Eclipse IDE**: Para desarrollo de código.
+- **Eclipse IDE y Visual Studio Code**: Para desarrollo de código.
 - **Postman**: Para pruebas de API.
 - **pgAdmin 4**: Para gestión de bases de datos.
 
