@@ -44,7 +44,6 @@ public class PacienteService {
 			paciente.setFoto(pacienteU.getFoto());
 			paciente.setCorreo(pacienteU.getCorreo());
 			paciente.setConsentimiento(pacienteU.getConsentimiento());
-			paciente.setMayorDeEdad(pacienteU.getMayorDeEdad());
 
 			return pacienteRepository.save(paciente);
 		}

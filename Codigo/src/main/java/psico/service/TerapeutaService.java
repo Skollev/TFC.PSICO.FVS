@@ -81,7 +81,7 @@ public class TerapeutaService {
 			defaultAdmin.setCorreo("admin@default.com");
 			defaultAdmin.setFoto("http://default.png");
 			defaultAdmin.setRol(Roles.TERAPEUTA);
-			defaultAdmin.setColegiacion(true);
+			defaultAdmin.setColegiacion("XXYYZZZZZ");
 
 			System.out.println("Usuario Admin creado por defecto");
 			terapeutaRepository.save(defaultAdmin);

@@ -38,23 +38,26 @@ public class SecurityConfiguration {
 				.requestMatchers("/login").permitAll()
 
 				// CITA
-				.requestMatchers(HttpMethod.GET, "/cita/{id}").permitAll()
+				.requestMatchers(HttpMethod.GET, "/cita/{id}").hasAuthority("PACIENTE")
+				.requestMatchers(HttpMethod.GET, "/cita/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.GET, "/cita/dePaciente").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.GET, "/cita/deTerapeuta").hasAuthority("TERAPEUTA")
-				.requestMatchers(HttpMethod.GET, "/cita/{id}/tarea").permitAll()
 				.requestMatchers(HttpMethod.POST, "/cita/pagar/{id}").hasAuthority("PACIENTE")
+				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAuthority("TERAPEUTA")
 
 				// INFORME SESION
-				.requestMatchers(HttpMethod.GET, "/informe/{id}").permitAll()
-				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").permitAll()
+				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAuthority("PACIENTE")
+				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("PACIENTE")
+				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/informe/{idCita}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.DELETE, "/informe/{id}").hasAuthority("TERAPEUTA")
 
 				// PACIENTE
-				.requestMatchers(HttpMethod.GET, "/paciente").permitAll()
-				.requestMatchers(HttpMethod.GET, "/paciente/{id}").permitAll()
+				.requestMatchers(HttpMethod.GET, "/paciente").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/paciente/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/paciente").permitAll()
 				.requestMatchers(HttpMethod.PUT, "/paciente").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.PUT, "/paciente").hasAuthority("TERAPEUTA")

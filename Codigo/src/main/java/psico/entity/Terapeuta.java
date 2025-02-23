@@ -13,7 +13,7 @@ import jakarta.validation.constraints.NotNull;
 public class Terapeuta extends Usuario {
 
 	@NotNull
-	private Boolean colegiacion;
+	private String colegiacion;
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Cita> citas;
@@ -22,11 +22,11 @@ public class Terapeuta extends Usuario {
 		super();
 	}
 
-	public Boolean getColegiacion() {
+	public String getColegiacion() {
 		return colegiacion;
 	}
 
-	public void setColegiacion(Boolean colegiacion) {
+	public void setColegiacion(String colegiacion) {
 		this.colegiacion = colegiacion;
 	}
 

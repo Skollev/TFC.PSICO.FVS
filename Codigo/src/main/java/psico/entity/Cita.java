@@ -21,6 +21,9 @@ public class Cita extends DomainEntity {
 	private String link;
 
 	@NotNull
+	private Boolean confirmada;
+
+	@NotNull
 	private Boolean pagado;
 
 	@JsonManagedReference
@@ -46,6 +49,14 @@ public class Cita extends DomainEntity {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+
+	public Boolean getConfirmada() {
+		return this.confirmada;
+	}
+
+	public void setConfirmada(Boolean confirmada) {
+		this.confirmada = confirmada;
 	}
 
 	public Boolean getPagado() {

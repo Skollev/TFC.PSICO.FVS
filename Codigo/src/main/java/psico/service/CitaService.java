@@ -65,7 +65,17 @@ public class CitaService {
 
 			Paciente paciente = JWTUtils.userLogin();
 
-			res = citaRepository.save(s);
+			if (s.getPagado() != true) {
+
+				s.setPagado(false);
+				res = citaRepository.save(s);
+
+			} else {
+
+				res = citaRepository.save(s);
+
+			}
+
 			paciente.getCitas().add(res);
 
 			Terapeuta terapeuta = terapeutaO.get();
@@ -109,13 +119,29 @@ public class CitaService {
 		return res;
 	}
 
+	public boolean confirmarCita(int id) {
+		boolean res = false;
+		Optional<Cita> cita0 = citaRepository.findById(id);
+		if (cita0.isPresent()) {
+
+			Cita cita = cita0.get();
+			cita.setConfirmada(true);
+			citaRepository.save(cita);
+
+			res = true;
+
+		}
+		return res;
+	}
+
 	public boolean pagarCita(int id) {
 		boolean res = false;
 		Optional<Cita> cita0 = citaRepository.findById(id);
 		if (cita0.isPresent()) {
 
-			cita0.get().setPagado(true);
-			citaRepository.save(cita0.get());
+			Cita cita = cita0.get();
+			cita.setPagado(true);
+			citaRepository.save(cita);
 
 			res = true;
 

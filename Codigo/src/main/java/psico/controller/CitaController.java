@@ -90,9 +90,24 @@ public class CitaController {
     public ResponseEntity<String> pagarCita(@PathVariable int id) {
         Boolean verEstado = citaService.pagarCita(id);
         if (verEstado == false) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al aceptar la solicitud");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al pagar la cita");
         } else {
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Solicitud aceptada correctamente");
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Cita pagada correctamente");
+        }
+    }
+
+    @PostMapping("/confirmar/{id}")
+    @Operation(summary = "Marcar como confirmada una cita por ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "202", description = "Cita pagada exitosamente"),
+            @ApiResponse(responseCode = "400", description = "Error al pagar la cita")
+    })
+    public ResponseEntity<String> confirmarCita(@PathVariable int id) {
+        Boolean verEstado = citaService.confirmarCita(id);
+        if (verEstado == false) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al confirmar la cita");
+        } else {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Cita confirmada correctamente");
         }
     }
 

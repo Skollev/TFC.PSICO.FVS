@@ -14,9 +14,6 @@ public class Paciente extends Usuario {
 	@NotNull
 	private Boolean consentimiento;
 
-	@NotNull
-	private Boolean mayorDeEdad;
-
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<Cita> citas;
 
@@ -30,14 +27,6 @@ public class Paciente extends Usuario {
 
 	public Boolean getConsentimiento() {
 		return consentimiento;
-	}
-
-	public void setMayorDeEdad(Boolean mayorDeEdad) {
-		this.mayorDeEdad = mayorDeEdad;
-	}
-
-	public Boolean getMayorDeEdad() {
-		return mayorDeEdad;
 	}
 
 	public Set<Cita> getCitas() {

@@ -23,8 +23,7 @@ JSON
   "username": "paciente",
   "password": "1234",
   "rol": "PACIENTE",
-  "consentimiento": true,
-  "mayorDeEdad": true
+  "consentimiento": true
 }
 
 Logear como paciente (POST) =
