@@ -40,9 +40,7 @@ JSON
 {
   "fecha": "2023-10-01T12:00:00",  // Formato de fecha y hora
   "link": "https://www.ejemplo.com", // URL válida
-  "anotacion": "Esta es una anotación de ejemplo.",
-  "pagado": false,
-  "tarea": "Completar el informe mensual"
+  "pagado": false
 }
 
 CREAR INFORME (POST) =
