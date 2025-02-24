@@ -41,20 +41,37 @@ public class CitaService {
 	}
 
 	public Cita getCitasById(int id) {
+		
 		Optional<Cita> citaO = citaRepository.findById(id);
+		Cita res = null;
+
 		if (citaO.isPresent()) {
+
 			Object userLogin = JWTUtils.userLogin();
+
 			if (userLogin instanceof Terapeuta) {
+
 				Terapeuta terapeuta = (Terapeuta) userLogin;
-				terapeuta.getCitas().contains(citaO.get());
-				return citaO.get();
+				
+				if (terapeuta.getCitas().contains(citaO.get())) {
+
+					res = citaO.get();
+
+				}
+
 			} else if (userLogin instanceof Paciente) {
+				
 				Paciente paciente = (Paciente) userLogin;
-				paciente.getCitas().contains(citaO.get());
-				return citaO.get();
+				
+				if (paciente.getCitas().contains(citaO.get())) {
+				
+					res = citaO.get();
+
+				}
 			}
 		}
-		return null;
+
+		return res;
 	}
 
 	@Transactional
