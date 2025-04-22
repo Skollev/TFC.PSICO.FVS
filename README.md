@@ -13,7 +13,7 @@
 ## 🌟 Descripción del Proyecto
 La API **Psico** está destinada a facilitar la organización y gestión de consultas psicológicas, ofreciendo herramientas para simplificar el proceso de gestión de citas.
 
-El objetivo principal es optimizar y centralizar la administración de eventos feriales, proporcionando una solución eficiente tanto para organizadores como para participantes.
+El objetivo principal es el de informar sobre la consulta terapéutica de la Psicóloga Rocío Delgado. 
 
 Esta API está construida con **Spring Boot**, utiliza **JWT** para autenticación y almacenamiento de datos en una base de datos **PostgreSQL**.
 
