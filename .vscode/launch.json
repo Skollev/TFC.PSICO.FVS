@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PsicoApplication<Psico (2)>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "psico.PsicoApplication",
+            "projectName": "Psico (2)",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
