@@ -1,7 +1,11 @@
+import Header from "../Components/Header";
+import Inicio from "../Components/Inicio";
+
 export default function PaginaInicio() {
     return (
         <>
-            <p>Hola</p>
+            <Header />
+            <Inicio />
         </>
     )
 }
