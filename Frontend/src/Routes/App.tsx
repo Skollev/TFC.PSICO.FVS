@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import PaginaInicio from '../Pages/PaginaInicio';
-import theme from '../Assets/Theme';
+import tema from '../Assets/Temas';
 
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={tema}>
       <CssBaseline />
       <BrowserRouter>
         <Routes>
