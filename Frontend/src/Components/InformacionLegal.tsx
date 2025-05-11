@@ -27,7 +27,7 @@ export default function InformacionLegal() {
 
                 <Box component="nav" sx={{ mt: 2, display: 'flex', flexDirection: 'column', gap: 2 }}>
                     <Link
-                        href="#aviso-legal"
+                        href="/aviso-legal"
                         underline="hover"
                         color="inherit"
                         sx={{
@@ -47,7 +47,7 @@ export default function InformacionLegal() {
                     </Link>
 
                     <Link
-                        href="#politica-privacidad"
+                        href="/politica-privacidad"
                         underline="hover"
                         color="inherit"
                         sx={{
@@ -67,7 +67,7 @@ export default function InformacionLegal() {
                     </Link>
 
                     <Link
-                        href="#politica-cookies"
+                        href="/politica-cookies"
                         underline="hover"
                         color="inherit"
                         sx={{
@@ -87,7 +87,7 @@ export default function InformacionLegal() {
                     </Link>
 
                     <Link
-                        href="#consentimiento-informado"
+                        href="/consentimiento-informado"
                         underline="hover"
                         color="inherit"
                         sx={{
@@ -107,7 +107,7 @@ export default function InformacionLegal() {
                     </Link>
 
                     <Link
-                        href="#informacion-sanitaria"
+                        href="/informacion-sanitaria"
                         underline="hover"
                         color="inherit"
                         sx={{

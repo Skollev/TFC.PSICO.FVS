@@ -60,35 +60,35 @@ export default function footer() {
 
                         <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                             <GavelIcon color="secondary" />
-                            <Link href="#aviso-legal" >
+                            <Link href="/aviso-legal" >
                                 <Typography variant="body2">Aviso Legal</Typography>
                             </Link>
                         </Grid>
 
                         <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                             <LockIcon color="secondary" />
-                            <Link href="#politica-privacidad" >
+                            <Link href="/politica-privacidad" >
                                 <Typography variant="body2">Política de Privacidad</Typography>
                             </Link>
                         </Grid>
 
                         <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                             <CookieIcon color="secondary" />
-                            <Link href="#politica-cookies" >
+                            <Link href="/politica-cookies" >
                                 <Typography variant="body2">Política de Cookies</Typography>
                             </Link>
                         </Grid>
 
                         <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                             <AssignmentIndIcon color="secondary" />
-                            <Link href="#consentimiento-informado" >
+                            <Link href="/consentimiento-informado" >
                                 <Typography variant="body2">Consentimiento Informado</Typography>
                             </Link>
                         </Grid>
 
                         <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                             <InfoIcon color="secondary" />
-                            <Link href="#informacion-sanitaria" >
+                            <Link href="/informacion-sanitaria" >
                                 <Typography variant="body2">Información Sanitaria</Typography>
                             </Link>
                         </Grid>

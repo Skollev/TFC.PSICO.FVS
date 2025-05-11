@@ -5,6 +5,11 @@ import tema from '../Assets/Temas';
 import Login from '../Components/Login';
 import SignUp from '../Components/SignUp';
 import PaginaInformacionLegal from '../Pages/PaginaInformacionLegal';
+import PaginaAvisoLegal from '../Pages/PaginaAvisoLegal';
+import PaginaPoliticaPrivacidad from '../Pages/PaginaPoliticaPrivacidad';
+import PaginaPoliticaCookies from '../Pages/PaginaPoliticaCookies';
+import PaginaConsentimientoInformado from '../Pages/PaginaConsentimientoInformado';
+import PaginaInformacionSanitaria from '../Pages/PaginaInformacionSanitaria';
 
 
 export default function App() {
@@ -17,6 +22,11 @@ export default function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/crear-cuenta" element={<SignUp />} />
           <Route path="/informacion-legal" element={<PaginaInformacionLegal />} />
+          <Route path="/aviso-legal" element={<PaginaAvisoLegal />} />
+          <Route path="/politica-privacidad" element={<PaginaPoliticaPrivacidad />} />
+          <Route path="/politica-cookies" element={<PaginaPoliticaCookies />} />
+          <Route path="/consentimiento-informado" element={<PaginaConsentimientoInformado />} />
+          <Route path="/informacion-sanitaria" element={<PaginaInformacionSanitaria />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
