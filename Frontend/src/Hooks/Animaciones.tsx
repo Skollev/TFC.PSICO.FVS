@@ -57,10 +57,16 @@ const AnimationStyles = () => (
                     opacity: 1,
                 }
             },
+            "@keyframes shrinkRight": {
+                "0%": { transform: "scaleX(1)", transformOrigin: "right center" },
+                "100%": { transform: "scaleX(0)", transformOrigin: "right center" },
+            },
+
             "@keyframes rotate": {
                 "0%": { transform: "rotate(0deg)" },
                 "100%": { transform: "rotate(360deg)" },
             },
+
         }}
     />
 );

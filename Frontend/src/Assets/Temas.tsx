@@ -1,6 +1,5 @@
 // src/theme.tsx
 import { createTheme } from '@mui/material/styles';
-import "@fontsource/playfair-display";
 
 const tema = createTheme({
     typography: {
@@ -48,6 +47,9 @@ const tema = createTheme({
     palette: {
         primary: {
             main: '#198754',
+        },
+        secondary: {
+            main: '#000000',
         },
         background: {
             default: '#f2fef2',
