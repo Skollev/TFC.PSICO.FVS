@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import PaginaInicio from '../Pages/PaginaInicio';
 import tema from '../Assets/Temas';
+import Login from '../Components/Login';
+import SignUp from '../Components/SignUp';
 
 
 export default function App() {
@@ -11,6 +13,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PaginaInicio />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/crear-cuenta" element={<SignUp />} />
+
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
