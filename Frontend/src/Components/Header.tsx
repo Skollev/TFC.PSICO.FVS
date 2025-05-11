@@ -11,6 +11,8 @@ import {
     ListItemText,
     Box,
     ListItemButton,
+    Grid,
+    Link,
 } from "@mui/material";
 import useScroll from "../Hooks/Scroll";
 import Animaciones from "../Hooks/Animaciones";
@@ -40,23 +42,18 @@ export default function Header() {
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
+                    <ListItemButton component="a" href="/login">
+                        <ListItemText primary="Iniciar Sesión" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
                     <ListItemButton component="a" href="/pedir-cita">
                         <ListItemText primary="Pedir cita" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/precios">
-                        <ListItemText primary="Consultar precios" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
                     <ListItemButton component="a" href="/informacion-legal">
                         <ListItemText primary="Información legal" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton component="a" href="/login">
-                        <ListItemText primary="Iniciar Sesión" />
                     </ListItemButton>
                 </ListItem>
             </List>
@@ -78,9 +75,15 @@ export default function Header() {
                             <MenuIcon />
                         </IconButton>
 
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Rocío Delgado Psicología
-                        </Typography>
+                        <Grid flexGrow={1}>
+
+                            <Typography variant="h6">
+                                <Link href="/" color="inherit" underline="none">
+                                    Rocío Delgado Psicología
+                                </Link>
+                            </Typography>
+
+                        </Grid>
 
                         <IconButton color="inherit" href="/Login">
                             <AccountCircle />

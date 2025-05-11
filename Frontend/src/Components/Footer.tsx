@@ -38,6 +38,13 @@ export default function footer() {
 
                     <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
                         <LanguageIcon color="secondary" />
+                        <Link href="https://www.doctoralia.es/rocio-perez-delgado/psicologo/ecija#address-id=247617&is-online-only=false&filters%5Bspecializations%5D%5B%5D=60">
+                            <Typography variant="body2">Página de Doctoralia</Typography>
+                        </Link>
+                    </Grid>
+
+                    <Grid container direction="row" alignItems="center" justifyContent="center" sx={{ gap: 1 }}>
+                        <LanguageIcon color="secondary" />
                         <Link href="https://www.mundopsicologos.com/centros/rocio-perez-delgado">
                             <Typography variant="body2">Página de Mundo Psicólogos</Typography>
                         </Link>
