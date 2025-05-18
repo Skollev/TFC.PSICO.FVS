@@ -8,7 +8,7 @@ import {
     Link,
 } from '@mui/material';
 import { useState } from 'react';
-import { iniciarSesion } from '../Hooks/IniciarSesion.tsx'; // Cambia el nombre del hook si es necesario
+import { iniciarSesion } from '../Hooks/IniciarSesion.tsx'; // Asegúrate de que este hook esté correctamente exportado
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -26,20 +26,15 @@ export default function Login() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         try {
-            const response = await iniciarSesion({
+            await iniciarSesion({
                 username: formData.username,
                 password: formData.password,
             });
 
-            if (response.ok) {
-                const data = await response.json();
-                // Puedes guardar el token si tu backend lo devuelve
-                localStorage.setItem('token', data.token);
-                window.location.href = '/'; // Redirige al home
-            } else {
-                alert('Credenciales inválidas');
-            }
+            // Redirige al usuario tras iniciar sesión exitosamente
+            window.location.href = '/';
         } catch (error) {
             alert('Error al iniciar sesión');
         }

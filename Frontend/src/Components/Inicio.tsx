@@ -12,7 +12,7 @@ import BrochazoAzul from "../Assets/BrochazoAzul.png";
 import BrochazoBlanco from "../Assets/BrochazoBlanco.png";
 import CardBasico from "./Card";
 
-import Animaciones from "../Hooks/Animaciones";
+import Animaciones from "../Assets/Animations/Animaciones";
 import useVisible from "../Hooks/Visible";
 import useScroll from "../Hooks/Scroll";
 import { useState } from "react";

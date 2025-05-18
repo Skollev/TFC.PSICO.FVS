@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import PaginaInicio from '../Pages/PaginaInicio';
-import tema from '../Assets/Temas';
+import tema from '../Assets/Style/Temas';
 import Login from '../Components/Login';
 import SignUp from '../Components/SignUp';
 import PaginaInformacionLegal from '../Pages/PaginaInformacionLegal';
@@ -10,6 +10,7 @@ import PaginaPoliticaPrivacidad from '../Pages/PaginaPoliticaPrivacidad';
 import PaginaPoliticaCookies from '../Pages/PaginaPoliticaCookies';
 import PaginaConsentimientoInformado from '../Pages/PaginaConsentimientoInformado';
 import PaginaInformacionSanitaria from '../Pages/PaginaInformacionSanitaria';
+import PaginaPerfil from '../Pages/PaginaPerfil';
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/politica-cookies" element={<PaginaPoliticaCookies />} />
           <Route path="/consentimiento-informado" element={<PaginaConsentimientoInformado />} />
           <Route path="/informacion-sanitaria" element={<PaginaInformacionSanitaria />} />
+          <Route path='/perfil' element={<PaginaPerfil />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

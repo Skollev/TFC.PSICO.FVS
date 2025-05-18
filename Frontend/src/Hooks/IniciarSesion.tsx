@@ -1,9 +1,9 @@
-type Props = {
+type props = {
     username: string;
     password: string;
-};
+}
 
-export async function iniciarSesion({ username, password }: Props) {
+export async function iniciarSesion({ username, password }: props) {
     try {
         const response = await fetch("http://localhost:8080/login", {
             method: "POST",
@@ -15,7 +15,17 @@ export async function iniciarSesion({ username, password }: Props) {
             }),
         });
 
-        return response;
+        if (!response.ok) {
+            throw new Error("Error en el backend");
+        }
+
+        const data = await response.json();
+        localStorage.setItem('id', data.id);
+        localStorage.setItem('rol', data.rol);
+        localStorage.setItem('token', data.token);
+
+
+        window.location.href = '/';
     } catch (error) {
         console.error("Error al iniciar sesión:", error);
         throw error;

@@ -59,10 +59,9 @@ public class SecurityConfiguration {
 
 				// PACIENTE
 				.requestMatchers(HttpMethod.GET, "/paciente").hasAuthority("TERAPEUTA")
-				.requestMatchers(HttpMethod.GET, "/paciente/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/paciente/{id}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/paciente").permitAll()
-				.requestMatchers(HttpMethod.PUT, "/paciente").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.PUT, "/paciente").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.PUT, "/paciente").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/paciente").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/paciente").hasAuthority("TERAPEUTA")
 

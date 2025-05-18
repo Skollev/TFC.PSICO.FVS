@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 
-// Esto era ayuntamiento
-
 @Entity
 public class Terapeuta extends Usuario {
 

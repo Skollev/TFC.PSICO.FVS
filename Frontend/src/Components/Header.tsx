@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { AccountCircle, Menu as MenuIcon } from "@mui/icons-material";
+import React, { useState } from "react";
+import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
 import {
     AppBar,
     Toolbar,
@@ -15,7 +15,6 @@ import {
     Link,
 } from "@mui/material";
 import useScroll from "../Hooks/Scroll";
-import Animaciones from "../Hooks/Animaciones";
 
 export default function Header() {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -24,6 +23,15 @@ export default function Header() {
     const toggleDrawer = (open: boolean) => () => {
         setDrawerOpen(open);
     };
+
+    const logOut: React.MouseEventHandler<HTMLButtonElement> = () => {
+        localStorage.removeItem("id");
+        localStorage.removeItem("rol");
+        localStorage.removeItem("token");
+        window.location.reload();
+    }
+
+    const id = localStorage.getItem("id");
 
     const drawerContent = (
         <Box
@@ -42,9 +50,15 @@ export default function Header() {
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/login">
-                        <ListItemText primary="Iniciar Sesión" />
-                    </ListItemButton>
+                    {id ? (
+                        <ListItemButton component="a" href="/perfil">
+                            <ListItemText primary="Ver Perfil" />
+                        </ListItemButton>
+                    ) : (
+                        <ListItemButton component="a" href="/login">
+                            <ListItemText primary="Iniciar Sesión" />
+                        </ListItemButton>
+                    )}
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/pedir-cita">
@@ -84,12 +98,21 @@ export default function Header() {
                             </Typography>
 
                         </Grid>
-
-                        <IconButton color="inherit" href="/Login">
-                            <AccountCircle />
-                        </IconButton>
+                        {id ? (
+                            <>
+                                <IconButton color="inherit" href="/Perfil">
+                                    <AccountCircle />
+                                </IconButton>
+                                <IconButton color="inherit" onClick={logOut}>
+                                    <Logout />
+                                </IconButton>
+                            </>
+                        ) : (
+                            <IconButton color="inherit" href="/Login">
+                                <AccountCircle />
+                            </IconButton>)}
                     </Toolbar>
-                </AppBar>
+                </AppBar >
             ) : (
                 <Box
                     sx={{
@@ -116,7 +139,8 @@ export default function Header() {
                         <MenuIcon />
                     </IconButton>
                 </Box>
-            )}
+            )
+            }
 
             <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer(false)}>
                 {drawerContent}

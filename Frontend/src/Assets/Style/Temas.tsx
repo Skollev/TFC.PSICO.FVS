@@ -27,6 +27,11 @@ const tema = createTheme({
             color: '#198754',
             textAlign: 'center',
         },
+        h5: {
+            fontWeight: 300,
+            fontSize: '1.5rem',
+            color: 'black',
+        },
         body1: {
             fontWeight: 400,
             fontSize: '1rem',
