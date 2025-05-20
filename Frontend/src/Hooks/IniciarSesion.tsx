@@ -1,9 +1,4 @@
-type props = {
-    username: string;
-    password: string;
-}
-
-export async function iniciarSesion({ username, password }: props) {
+export async function iniciarSesion(username: string, password: string) {
     try {
         const response = await fetch("http://localhost:8080/login", {
             method: "POST",

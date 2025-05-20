@@ -10,11 +10,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
+import java.util.Objects;
 
 @Entity
 public class Cita extends DomainEntity {
+	@NotNull
+	private String preferenciaHoraria;
 
 	@NotNull
+	private String tipoTerapia;
+
 	private LocalDateTime fecha;
 
 	@URL
@@ -33,6 +38,30 @@ public class Cita extends DomainEntity {
 
 	public Cita() {
 		super();
+	}
+
+	public String getPreferenciaHoraria() {
+		return this.preferenciaHoraria;
+	}
+
+	public void setPreferenciaHoraria(String preferenciaHoraria) {
+		this.preferenciaHoraria = preferenciaHoraria;
+	}
+
+	public String getTipoTerapia() {
+		return this.tipoTerapia;
+	}
+
+	public void setTipoTerapia(String tipoTerapia) {
+		this.tipoTerapia = tipoTerapia;
+	}
+
+	public Boolean isConfirmada() {
+		return this.confirmada;
+	}
+
+	public Boolean isPagado() {
+		return this.pagado;
 	}
 
 	public LocalDateTime getFecha() {

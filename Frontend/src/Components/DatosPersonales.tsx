@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 
 type Props = {
     nombre: string;
@@ -60,7 +61,16 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido }
                     </Typography>
 
                 </Box>
+                <Box alignSelf={"flex-end"}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        href="/pedirCita"
+                    >
+                        Pedir cita
+                    </Button>
+                </Box>
             </Paper>
-        </Grid>
+        </Grid >
     );
 }

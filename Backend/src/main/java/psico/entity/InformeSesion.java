@@ -12,7 +12,6 @@ public class InformeSesion extends DomainEntity {
     @NotBlank
     private String demanda;
 
-    @NotBlank
     private String tarea;
 
     @JsonBackReference

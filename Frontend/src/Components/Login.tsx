@@ -28,10 +28,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            await iniciarSesion({
-                username: formData.username,
-                password: formData.password,
-            });
+            await iniciarSesion(formData.username, formData.password);
 
             // Redirige al usuario tras iniciar sesión exitosamente
             window.location.href = '/';

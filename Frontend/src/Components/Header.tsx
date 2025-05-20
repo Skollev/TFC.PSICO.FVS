@@ -28,7 +28,7 @@ export default function Header() {
         localStorage.removeItem("id");
         localStorage.removeItem("rol");
         localStorage.removeItem("token");
-        window.location.reload();
+        window.location.href = '/';
     }
 
     const id = localStorage.getItem("id");
@@ -61,7 +61,7 @@ export default function Header() {
                     )}
                 </ListItem>
                 <ListItem disablePadding>
-                    <ListItemButton component="a" href="/pedir-cita">
+                    <ListItemButton component="a" href="/pedirCita">
                         <ListItemText primary="Pedir cita" />
                     </ListItemButton>
                 </ListItem>

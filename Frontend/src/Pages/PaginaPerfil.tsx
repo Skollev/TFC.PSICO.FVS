@@ -60,11 +60,10 @@ export default function PaginaPerfil() {
                 </Divider>
             </Grid>
 
-            {usuario.citas?.map((unaCita: InterfazCita) => (
+            {usuario.citas ? usuario.citas?.map((unaCita: InterfazCita) => (
                 <Cita key={unaCita.id} cita={unaCita} />
-            ))}
-
-
+            )) : (<Typography variant="h1" p={4} height={"30vh"}>Aún no hay citas...</Typography >)
+            }
             <Footer />
         </>
     );

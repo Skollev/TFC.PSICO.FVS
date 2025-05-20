@@ -105,7 +105,7 @@ public class CitaController {
     public ResponseEntity<String> confirmarCita(@PathVariable int id) {
         Boolean verEstado = citaService.confirmarCita(id);
         if (verEstado == false) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al confirmar la cita");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al confirmar la cita en el backend");
         } else {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body("Cita confirmada correctamente");
         }
@@ -123,7 +123,8 @@ public class CitaController {
         if (citaSave == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al crear la cita");
         } else {
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body("Cita creada correctamente");
+
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(citaSave.getId() + "");
         }
     }
 

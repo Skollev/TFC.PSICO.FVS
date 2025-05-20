@@ -14,7 +14,6 @@ import CardBasico from "./Card";
 
 import Animaciones from "../Assets/Animations/Animaciones";
 import useVisible from "../Hooks/Visible";
-import useScroll from "../Hooks/Scroll";
 import { useState } from "react";
 import PrecioCircular from "./PrecioCircular";
 
@@ -113,7 +112,7 @@ export default function Inicio() {
                         Estoy aquí para acompañarte sin juicios en momentos difíciles y no tan difíciles. Creamos juntas/os un espacio seguro para entender lo que sientes, ponerle nombre y avanzar a tu ritmo, con herramientas que de verdad ayudan.
                     </Typography>
                     <Box>
-                        <Boton direccion="/" valor="Pide tu cita" />
+                        <Boton direccion="/pedirCita" valor="Pide tu cita" />
                     </Box>
                 </Grid>
                 <Grid size={6} display="flex" justifyContent="center" p={4}>
@@ -285,7 +284,7 @@ export default function Inicio() {
                             3. Realiza el pago y prepárate para la sesión.
                         </Typography>
                         <Box display={"flex"} justifyContent={"right"} p={3}>
-                            <Boton direccion="/" valor="Pide tu cita" />
+                            <Boton direccion="/pedirCita" valor="Pide tu cita" />
                         </Box>
                     </Grid>
                     <Grid size={5} >

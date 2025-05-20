@@ -11,6 +11,7 @@ import PaginaPoliticaCookies from '../Pages/PaginaPoliticaCookies';
 import PaginaConsentimientoInformado from '../Pages/PaginaConsentimientoInformado';
 import PaginaInformacionSanitaria from '../Pages/PaginaInformacionSanitaria';
 import PaginaPerfil from '../Pages/PaginaPerfil';
+import PaginaPedirCita from '../Pages/PaginaPedirCita';
 
 
 export default function App() {
@@ -29,6 +30,8 @@ export default function App() {
           <Route path="/consentimiento-informado" element={<PaginaConsentimientoInformado />} />
           <Route path="/informacion-sanitaria" element={<PaginaInformacionSanitaria />} />
           <Route path='/perfil' element={<PaginaPerfil />} />
+          <Route path='/pedirCita' element={<PaginaPedirCita />} />
+
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

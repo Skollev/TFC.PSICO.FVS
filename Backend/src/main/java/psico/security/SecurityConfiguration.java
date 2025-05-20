@@ -45,7 +45,7 @@ public class SecurityConfiguration {
 				.requestMatchers(HttpMethod.GET, "/cita/dePaciente").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.GET, "/cita/deTerapeuta").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/pagar/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/cita/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAuthority("TERAPEUTA")
 
@@ -54,7 +54,7 @@ public class SecurityConfiguration {
 				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("TERAPEUTA")
-				.requestMatchers(HttpMethod.POST, "/informe/{idCita}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.POST, "/informe/{idCita}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/informe/{id}").hasAuthority("TERAPEUTA")
 
 				// PACIENTE
