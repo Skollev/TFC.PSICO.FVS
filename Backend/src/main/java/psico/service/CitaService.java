@@ -41,7 +41,7 @@ public class CitaService {
 	}
 
 	public Cita getCitasById(int id) {
-		
+
 		Optional<Cita> citaO = citaRepository.findById(id);
 		Cita res = null;
 
@@ -52,7 +52,7 @@ public class CitaService {
 			if (userLogin instanceof Terapeuta) {
 
 				Terapeuta terapeuta = (Terapeuta) userLogin;
-				
+
 				if (terapeuta.getCitas().contains(citaO.get())) {
 
 					res = citaO.get();
@@ -60,11 +60,11 @@ public class CitaService {
 				}
 
 			} else if (userLogin instanceof Paciente) {
-				
+
 				Paciente paciente = (Paciente) userLogin;
-				
+
 				if (paciente.getCitas().contains(citaO.get())) {
-				
+
 					res = citaO.get();
 
 				}
@@ -74,6 +74,22 @@ public class CitaService {
 		return res;
 	}
 
+	public Paciente getPacienteByCitaId(int id) {
+
+		Optional<Cita> citaO = citaRepository.findById(id);
+		Cita res = null;
+		Paciente pacienteObtenido = null;
+
+		if (citaO.isPresent()) {
+
+			res = citaO.get();
+
+			pacienteObtenido = res.getPaciente();
+		}
+
+		return pacienteObtenido;
+	}
+
 	@Transactional
 	public Cita save(Cita s, int idTerapeuta) {
 		Cita res = null;
@@ -81,6 +97,10 @@ public class CitaService {
 		if (!terapeutaO.isEmpty()) {
 
 			Paciente paciente = JWTUtils.userLogin();
+			Terapeuta terapeuta = terapeutaO.get();
+
+			s.setTerapeuta(terapeuta);
+			s.setPaciente(paciente);
 
 			if (s.getPagado() != true) {
 
@@ -95,7 +115,6 @@ public class CitaService {
 
 			paciente.getCitas().add(res);
 
-			Terapeuta terapeuta = terapeutaO.get();
 			terapeuta.getCitas().add(res);
 			terapeutaRepository.save(terapeuta);
 		}

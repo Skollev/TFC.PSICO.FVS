@@ -4,10 +4,13 @@ import java.time.LocalDateTime;
 
 import org.hibernate.validator.constraints.URL;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
@@ -30,6 +33,16 @@ public class Cita extends DomainEntity {
 
 	@NotNull
 	private Boolean pagado;
+
+	@JsonIgnoreProperties({ "id", "version", "citas", "foto", "username", "password" })
+	@ManyToOne
+	@JoinColumn(name = "paciente_id")
+	private Paciente paciente;
+
+	@JsonIgnoreProperties({ "id", "version", "citas", "foto", "username", "password" })
+	@ManyToOne
+	@JoinColumn(name = "terapeuta_id")
+	private Terapeuta terapeuta;
 
 	@JsonManagedReference
 	@OneToOne
@@ -90,6 +103,23 @@ public class Cita extends DomainEntity {
 
 	public Boolean getPagado() {
 		return pagado;
+
+	}
+
+	public Paciente getPaciente() {
+		return this.paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public Terapeuta getTerapeuta() {
+		return this.terapeuta;
+	}
+
+	public void setTerapeuta(Terapeuta terapeuta) {
+		this.terapeuta = terapeuta;
 	}
 
 	public void setPagado(Boolean pagado) {

@@ -17,7 +17,7 @@ interface Props {
     cita: CitaInterface;
 }
 
-const Cita: React.FC<Props> = ({ cita }) => {
+const CitaPaciente: React.FC<Props> = ({ cita }) => {
     const [openInforme, setOpenInforme] = React.useState(false);
     const [openPagar, setOpenPagar] = React.useState(false);
     const [fechaFormateada, setFechaFormateada] = React.useState<string>("");
@@ -55,9 +55,31 @@ const Cita: React.FC<Props> = ({ cita }) => {
                 }}
             >
                 <CardContent>
-                    <Box display="flex" alignItems="center" mb={1} flexWrap="wrap">
-                        <CalendarTodayIcon color="action" sx={{ mr: 1 }} />
-                        <Typography variant="h6" fontWeight="bold">{fechaFormateada}</Typography>
+                    <Box
+                        display="flex"
+                        alignItems="center"
+                        mb={2}
+                        p={2}
+                        borderRadius={2}
+                        boxShadow={2}
+                        bgcolor="background.paper"
+                        flexWrap="wrap"
+                        gap={2}
+                    >
+                        <CalendarTodayIcon color="primary" sx={{ fontSize: 28 }} />
+
+                        <Typography variant="h6" fontWeight="bold">
+                            {fechaFormateada}
+                        </Typography>
+
+                        <Box display="flex" flexDirection="column" paddingLeft={3}>
+                            <Typography variant="subtitle1" fontWeight="bold">
+                                {cita.terapeuta?.nombre} {cita.terapeuta?.apellido}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {cita.terapeuta?.correo}
+                            </Typography>
+                        </Box>
                     </Box>
 
                     <Box display="flex" alignItems="center" mb={1} flexWrap="wrap">
@@ -163,4 +185,4 @@ const Cita: React.FC<Props> = ({ cita }) => {
     );
 };
 
-export default Cita;
+export default CitaPaciente;

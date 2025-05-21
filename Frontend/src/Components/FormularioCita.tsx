@@ -20,7 +20,7 @@ const FormularioCita: React.FC = () => {
         e.preventDefault();
         try {
             await pedirCita(horario, tipoTerapia, demanda);
-            alert("Cita solicitada con éxito.");
+            window.location.href = "/perfil";
         } catch (error) {
             console.error("Error al pedir cita:", error);
         };

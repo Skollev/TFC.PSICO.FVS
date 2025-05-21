@@ -24,6 +24,8 @@ export interface InterfazCita {
     link: string;
     confirmada: boolean;
     pagado: boolean;
+    paciente: Paciente | null;
+    terapeuta: Terapeuta | null;
     informeSesion: InformeSesion | null;
 }
 

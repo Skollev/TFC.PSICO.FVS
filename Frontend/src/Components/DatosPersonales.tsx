@@ -61,15 +61,17 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido }
                     </Typography>
 
                 </Box>
-                <Box alignSelf={"flex-end"}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        href="/pedirCita"
-                    >
-                        Pedir cita
-                    </Button>
-                </Box>
+                {localStorage.getItem("rol") == "PACIENTE" ? (
+                    <Box alignSelf={"flex-end"}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            href="/pedirCita"
+                        >
+                            Pedir cita
+                        </Button>
+                    </Box>
+                ) : null}
             </Paper>
         </Grid >
     );

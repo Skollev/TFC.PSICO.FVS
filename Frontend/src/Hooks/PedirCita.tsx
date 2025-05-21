@@ -1,3 +1,7 @@
+import { Paciente, Terapeuta } from "../Models/Interfaces";
+import { obtenerPaciente } from "./ObtenerPaciente";
+import { obtenerTerapeuta } from "./ObtenerTerapeuta";
+
 export async function pedirCita(
     preferenciaHoraria: string,
     tipoTerapia: string,
@@ -6,7 +10,27 @@ export async function pedirCita(
     const confirmada = false;
     const pagado = false;
     const token = localStorage.getItem("token");
+    const idPaciente = localStorage.getItem("id");
+    let paciente: Paciente;
+    let terapeuta: Terapeuta;
+    try {
+        paciente = await obtenerPaciente(Number(idPaciente));
+    } catch (error) {
+        console.error("Error en obtenerPaciente:", error);
+        throw error;
 
+    }
+    console.log(paciente);
+
+    try {
+        terapeuta = await obtenerTerapeuta(1);
+    } catch (error) {
+        console.error("Error en obtenerTerapeuta:", error);
+
+        throw error;
+    }
+
+    console.log(terapeuta);
     try {
         const response = await fetch("http://localhost:8080/cita/1", {
             method: "POST",
@@ -56,5 +80,5 @@ export async function pedirCita(
         alert("No se pudo completar la solicitud. Intenta de nuevo.");
         throw error;
     }
-    window.location.href = "/perfil";
+
 }

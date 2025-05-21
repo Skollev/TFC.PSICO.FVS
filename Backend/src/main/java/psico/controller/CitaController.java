@@ -19,6 +19,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import psico.entity.Cita;
 import psico.entity.InformeSesion;
+import psico.entity.Paciente;
+import psico.entity.Terapeuta;
 import psico.service.CitaService;
 
 @RestController
@@ -120,6 +122,7 @@ public class CitaController {
     public ResponseEntity<String> save(@RequestBody Cita c, @PathVariable int idTerapeuta) {
 
         Cita citaSave = citaService.save(c, idTerapeuta);
+
         if (citaSave == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al crear la cita");
         } else {
