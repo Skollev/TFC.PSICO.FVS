@@ -86,7 +86,6 @@ export default function PrecioCircular({ precio, texto }: Props) {
                     fill="#198754"
                     fontSize="17"
                     letterSpacing="3px"
-                    transform="uppercase"
                 >
                     <textPath href="#circlePath">
                         {generarTextoCircular(texto)}

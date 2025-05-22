@@ -40,20 +40,18 @@ public class SecurityConfiguration {
 				.requestMatchers("/login").permitAll()
 
 				// CITA
-				.requestMatchers(HttpMethod.GET, "/cita/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.GET, "/cita/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/cita/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
 				.requestMatchers(HttpMethod.GET, "/cita/dePaciente").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.GET, "/cita/deTerapeuta").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.PUT, "/cita").hasAnyAuthority("PACIENTE", "TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/pagar/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/cita/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAuthority("TERAPEUTA")
 
 				// INFORME SESION
-				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAuthority("TERAPEUTA")
-				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
+				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/informe/{idCita}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 				.requestMatchers(HttpMethod.DELETE, "/informe/{id}").hasAuthority("TERAPEUTA")
 
@@ -62,8 +60,7 @@ public class SecurityConfiguration {
 				.requestMatchers(HttpMethod.GET, "/paciente/{id}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/paciente").permitAll()
 				.requestMatchers(HttpMethod.PUT, "/paciente").hasAnyAuthority("TERAPEUTA", "PACIENTE")
-				.requestMatchers(HttpMethod.DELETE, "/paciente").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.DELETE, "/paciente").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.DELETE, "/paciente").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 
 				// TERAPEUTA
 				.requestMatchers(HttpMethod.GET, "/terapeuta").permitAll()

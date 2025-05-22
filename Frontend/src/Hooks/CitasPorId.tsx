@@ -1,24 +1,28 @@
 import { InterfazCita } from "../Models/Interfaces";
 
-export async function citasPorTerapeuta() {
+export async function citasPorId(id: Number) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`/cita/deTerapeuta`, {
+        const response = await fetch(`http://localhost:8080/cita/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
 
             },
-            body: JSON.stringify({
-            }),
         });
+
+
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
 
         const data: InterfazCita = await response.json();
         return data;
+
     } catch (error) {
-        console.error("Error al obtener las citas del terapeuta:", error);
+        console.error("Error al obtener la cita por id:", error);
         throw error;
     }
 }

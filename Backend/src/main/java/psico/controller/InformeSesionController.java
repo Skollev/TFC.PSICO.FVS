@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -70,6 +71,20 @@ public class InformeSesionController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al crear la cita");
         } else {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body("Informe creado correctamente");
+        }
+    }
+
+    @PutMapping
+    @Operation(summary = "Actualizar un informe existente")
+    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Informe actualizado exitosamente"),
+            @ApiResponse(responseCode = "404", description = "Informe no encontrado"),
+            @ApiResponse(responseCode = "400", description = "Solicitud inválida") })
+    public ResponseEntity<String> updateInforme(@RequestBody InformeSesion updatedInforme) {
+        InformeSesion response = informeService.updateInformeSesion(updatedInforme);
+        if (response != null) {
+            return ResponseEntity.status(HttpStatus.OK).body("Informe actualizado exitosamente");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Informe no encontrado");
         }
     }
 

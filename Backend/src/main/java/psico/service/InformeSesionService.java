@@ -38,16 +38,17 @@ public class InformeSesionService {
 
                 Terapeuta terapeuta = (Terapeuta) userLogin;
 
-                terapeuta.getCitas().contains(informe.getCita());
-
-                return informe;
+                if (terapeuta.getCitas().contains(informe.getCita())) {
+                    return informe;
+                }
 
             } else if (userLogin instanceof Paciente) {
 
                 Paciente paciente = (Paciente) userLogin;
 
-                paciente.getCitas().contains(informe.getCita());
-                return informe;
+                if (paciente.getCitas().contains(informe.getCita())) {
+                    return informe;
+                }
             }
         }
         return null;
@@ -85,6 +86,18 @@ public class InformeSesionService {
             citaRepository.save(cita);
         }
         return res;
+    }
+
+    @Transactional
+    public InformeSesion updateInformeSesion(InformeSesion InformeU) {
+        Optional<InformeSesion> informeO = informeSesionRepository.findById(InformeU.getId());
+        InformeSesion informe = informeO.get();
+        if (informe != null) {
+            informe.setDemanda(InformeU.getDemanda());
+            informe.setTarea(InformeU.getTarea());
+            return informeSesionRepository.save(informe);
+        }
+        return null;
     }
 
     public boolean deleteInformeSesion(int id) {

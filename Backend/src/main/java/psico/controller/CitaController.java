@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,8 +20,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import psico.entity.Cita;
 import psico.entity.InformeSesion;
-import psico.entity.Paciente;
-import psico.entity.Terapeuta;
 import psico.service.CitaService;
 
 @RestController
@@ -143,6 +142,22 @@ public class CitaController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al borrar la cita");
         } else {
             return ResponseEntity.status(HttpStatus.ACCEPTED).body("Cita borrada correctamente");
+        }
+    }
+
+    @PutMapping
+    @Operation(summary = "Actualizar cita existente")
+    @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Cita actualizado exitosamente"),
+            @ApiResponse(responseCode = "404", description = "Cita no encontrado"),
+            @ApiResponse(responseCode = "400", description = "Solicitud inválida") })
+    public ResponseEntity<String> updateCita(@RequestBody Cita updatedCita) {
+        System.out.println("🟡 ID de la cita recibida para actualizar: " + updatedCita.getId());
+
+        Cita response = citaService.updateCita(updatedCita);
+        if (response != null) {
+            return ResponseEntity.status(HttpStatus.OK).body("Cita actualizada exitosamente");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cita no encontrado");
         }
     }
 }

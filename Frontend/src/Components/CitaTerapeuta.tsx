@@ -34,7 +34,7 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                 })
             );
         } else {
-            setFechaFormateada("Por designar");
+            setFechaFormateada(cita.preferenciaHoraria);
         }
     }, [cita.fecha]);
 
@@ -80,6 +80,14 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                                 {cita.paciente?.correo}
                             </Typography>
                         </Box>
+                        <Box display="flex" flexDirection="column" paddingLeft={3}>
+                            <Typography variant="subtitle1" fontWeight="bold">
+                                Tipo de terapia
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {cita.tipoTerapia}
+                            </Typography>
+                        </Box>
                     </Box>
 
                     <Box display="flex" alignItems="center" mb={1} flexWrap="wrap">
@@ -119,7 +127,7 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                         <Button
                             variant="outlined"
                             color="primary"
-                            href={`/crearInforme/${cita.id}`}
+                            href={`/crearInforme/${cita.informeSesion?.id}`}
                         >
                             Crear informe
                         </Button>
@@ -142,7 +150,7 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                             <Typography variant="subtitle1" gutterBottom>
                                 <strong>Demanda:</strong>
                             </Typography>
-                            <Typography variant="body2" paragraph>
+                            <Typography variant="body2">
                                 {cita.informeSesion.demanda}
                             </Typography>
                             <Typography variant="subtitle1" gutterBottom>

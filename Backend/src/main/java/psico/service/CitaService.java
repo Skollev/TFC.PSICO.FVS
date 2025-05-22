@@ -5,10 +5,13 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import jakarta.transaction.Transactional;
 import psico.entity.Cita;
+import psico.entity.InformeSesion;
 import psico.entity.Paciente;
 import psico.entity.Terapeuta;
 import psico.repository.CitaRepository;
@@ -183,5 +186,20 @@ public class CitaService {
 
 		}
 		return res;
+	}
+
+	@Transactional
+	public Cita updateCita(Cita citaU) {
+		Optional<Cita> citaO = citaRepository.findById(citaU.getId());
+		if (citaO.isEmpty()) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cita no encontrada con ID: " + citaU.getId());
+		}
+		Cita cita = citaO.get();
+		if (cita != null) {
+			cita.setFecha(citaU.getFecha());
+			cita.setLink(citaU.getLink());
+			return citaRepository.save(cita);
+		}
+		return null;
 	}
 }

@@ -12,6 +12,8 @@ import PaginaConsentimientoInformado from '../Pages/PaginaConsentimientoInformad
 import PaginaInformacionSanitaria from '../Pages/PaginaInformacionSanitaria';
 import PaginaPerfil from '../Pages/PaginaPerfil';
 import PaginaPedirCita from '../Pages/PaginaPedirCita';
+import PaginaActualizarInforme from '../Pages/PaginaActualizarInforme';
+import PaginaActualizarCita from '../Pages/PaginaActualizarCita';
 
 
 export default function App() {
@@ -31,6 +33,8 @@ export default function App() {
           <Route path="/informacion-sanitaria" element={<PaginaInformacionSanitaria />} />
           <Route path='/perfil' element={<PaginaPerfil />} />
           <Route path='/pedirCita' element={<PaginaPedirCita />} />
+          <Route path='/crearInforme/:id' element={<PaginaActualizarInforme />} />
+          <Route path='/modificarCita/:id' element={<PaginaActualizarCita />} />
 
         </Routes>
       </BrowserRouter>

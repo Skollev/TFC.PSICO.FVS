@@ -20,6 +20,8 @@ export interface InformeSesion {
 export interface InterfazCita {
     id: number;
     version: number;
+    preferenciaHoraria: string;
+    tipoTerapia: string;
     fecha: string;
     link: string;
     confirmada: boolean;
