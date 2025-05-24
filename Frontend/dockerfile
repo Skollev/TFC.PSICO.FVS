@@ -2,12 +2,12 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY Frontend/package*.json ./
-COPY Frontend/tsconfig.json ./
+COPY ./package*.json ./
+COPY ./tsconfig.json ./
 
 RUN npm install
 
-COPY Frontend ./
+COPY ./ ./
 
 EXPOSE 5173
 
