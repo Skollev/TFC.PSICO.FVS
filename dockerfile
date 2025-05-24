@@ -37,7 +37,7 @@ WORKDIR /app
 
 COPY --from=frontend-builder /frontend ./frontend
 
-COPY --from=backend-builder /app/backend ./backend
+COPY --from=backend-builder /src/Backend/target/Psico-0.0.1-SNAPSHOT.jar ./backend/app.jar
 
 COPY run.sh ./run.sh
 
