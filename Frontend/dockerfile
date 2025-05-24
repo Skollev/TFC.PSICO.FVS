@@ -1,22 +1,28 @@
-# Etapa 1: Build del frontend
-FROM node:23-alpine AS build
+FROM node:23-alpine AS builder
 
 WORKDIR /app
 
+# Copia y construye el proyecto
 COPY Frontend/package*.json ./
 COPY Frontend/tsconfig.json ./
+COPY Frontend/vite.config.* ./
+COPY Frontend/src ./src
+COPY Frontend/public ./public
 
 RUN npm install
-
-COPY Frontend/ ./
-
 RUN npm run build
 
-# Etapa 2: Servir con nginx
-FROM nginx:alpine
+# Etapa de producción con serve
+FROM node:23-alpine
 
-COPY --from=build /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-EXPOSE 80
+# Instala 'serve'
+RUN npm install -g serve
 
-CMD ["nginx", "-g", "daemon off;"]
+# Copia el resultado del build
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "dist", "-l", "3000"]
