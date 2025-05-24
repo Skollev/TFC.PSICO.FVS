@@ -6,7 +6,7 @@ export async function obtenerTerapeuta(id: number): Promise<Terapeuta> {
 
 
     try {
-        const response = await fetch(`http://localhost:8080/terapeuta/${id}`, {
+        const response = await fetch(`/api/terapeuta/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

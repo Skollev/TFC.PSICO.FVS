@@ -1,0 +1,36 @@
+# Frontend (React + Vite)
+Frontend/node_modules
+Frontend/dist
+Frontend/.vite
+Frontend/.env
+Frontend/.env.*.local
+Frontend/npm-debug.log
+Frontend/yarn-debug.log
+Frontend/yarn-error.log
+Frontend/.parcel-cache
+
+# Backend (Spring Boot)
+Backend/target
+Backend/.mvn
+Backend/.env
+Backend/.idea
+Backend/*.iml
+Backend/mvnw
+Backend/mvnw.cmd
+Backend/logs
+Backend/.classpath
+Backend/.project
+Backend/.settings
+
+# General
+*.log
+*.tmp
+.DS_Store
+.env
+.env.local
+docker-compose.override.yml
+.git
+.gitignore
+.vscode
+.idea
+README.md

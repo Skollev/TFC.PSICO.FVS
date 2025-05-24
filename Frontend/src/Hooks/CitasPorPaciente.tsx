@@ -2,7 +2,7 @@ export async function citasPorPaciente() {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`/cita/dePaciente`, {
+        const response = await fetch(`/api/cita/dePaciente`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

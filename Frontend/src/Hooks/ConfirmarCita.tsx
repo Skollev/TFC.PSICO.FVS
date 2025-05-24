@@ -4,7 +4,7 @@ export async function confirmarCita(id: number) {
 
 
     try {
-        const response = await fetch(`http://localhost:8080/cita/confirmar/${id}`, {
+        const response = await fetch(`/api/cita/confirmar/${id}`, {
             method: "Post",
             headers: {
                 "Content-Type": "application/json",

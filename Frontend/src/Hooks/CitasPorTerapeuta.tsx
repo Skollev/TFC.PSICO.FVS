@@ -4,7 +4,7 @@ export async function citasPorTerapeuta() {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`/cita/deTerapeuta`, {
+        const response = await fetch(`/api/cita/deTerapeuta`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

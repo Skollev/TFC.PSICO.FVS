@@ -6,7 +6,7 @@ export async function obtenerPaciente(id: number): Promise<Paciente> {
         const token = localStorage.getItem("token");
 
 
-        const response = await fetch(`http://localhost:8080/paciente/${id}`, {
+        const response = await fetch(`/api/paciente/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

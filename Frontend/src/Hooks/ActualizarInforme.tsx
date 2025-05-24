@@ -5,7 +5,7 @@ export async function actualizarInforme(informeSesion: InformeSesion) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("/informe", {
+        const response = await fetch("/api/informe", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

@@ -12,7 +12,7 @@ type Props = {
 
 export async function crearPaciente({ nombre, apellido, foto, correo, username, password, consentimiento }: Props) {
     try {
-        const response = await fetch("http://localhost:8080/paciente", {
+        const response = await fetch("/api/paciente", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

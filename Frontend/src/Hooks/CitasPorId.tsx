@@ -4,7 +4,7 @@ export async function citasPorId(id: Number) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`http://localhost:8080/cita/${id}`, {
+        const response = await fetch(`/api/cita/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -4,7 +4,7 @@ export async function obtenerInforme(id: number) {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`http://localhost:8080/informe/${id}`, {
+        const response = await fetch(`/api/informe/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -10,7 +10,7 @@ export async function actualizarTerapeuta({ nombre, apellido, foto, correo, cole
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch("/terapeuta", {
+        const response = await fetch("/api/terapeuta", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

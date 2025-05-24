@@ -32,7 +32,7 @@ export async function pedirCita(
 
     console.log(terapeuta);
     try {
-        const response = await fetch("http://localhost:8080/cita/1", {
+        const response = await fetch("/api/cita/1", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +57,7 @@ export async function pedirCita(
         const tarea = "";
 
         if (demanda != "") {
-            const response2 = await fetch(`http://localhost:8080/informe/${id}`, {
+            const response2 = await fetch(`/api/informe/${id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: psico-fvs
+    ports:
+      - "5137:5137"
+      - "8080:8080"
