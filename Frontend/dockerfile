@@ -2,14 +2,13 @@ FROM node:23-alpine AS builder
 
 WORKDIR /app
 
-# Copia y construye el proyecto
 COPY Frontend/package*.json ./
 COPY Frontend/tsconfig.json ./
-COPY Frontend/vite.config.* ./
-COPY Frontend/src ./src
-COPY Frontend/public ./public
 
 RUN npm install
+
+COPY Frontend/ ./
+
 RUN npm run build
 
 # Etapa de producción con serve
