@@ -1,7 +1,8 @@
 #!/bin/sh
 
 cd /app/backend
-java -jar target/*.jar &
+#!/bin/sh
+java -jar ./backend/app.jar &
 
 sleep 10
 
