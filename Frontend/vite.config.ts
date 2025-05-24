@@ -7,7 +7,7 @@ const apiBase = process.env.VITE_API_BASE_URL || 'http://localhost:8080'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/',
   server: {
     proxy: {
       '/api': apiBase
