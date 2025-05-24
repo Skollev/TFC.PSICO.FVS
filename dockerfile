@@ -26,6 +26,8 @@ WORKDIR /src/Backend
 
 RUN chmod +x ./mvnw
 
+ENV MAVEN_OPTS="-Xmx256m"
+
 RUN ./mvnw package -DskipTests
 
 # Etapa 3: Imagen final
@@ -43,7 +45,7 @@ COPY run.sh ./run.sh
 
 RUN chmod +x ./run.sh
 
-EXPOSE 5137
+EXPOSE 5173
 EXPOSE 8080
 
 CMD ["sh", "./run.sh"]

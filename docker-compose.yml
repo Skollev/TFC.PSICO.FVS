@@ -5,5 +5,5 @@ services:
       dockerfile: Dockerfile
     image: psico-fvs
     ports:
-      - "5137:5137"
+      - "5173:5173"
       - "8080:8080"
