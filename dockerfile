@@ -31,12 +31,9 @@ RUN ./mvnw package -DskipTests
 # Etapa 3: Imagen final
 FROM eclipse-temurin:21-jre-alpine
  
-# Instalar dependencias de Node.js
-RUN apt-get update && \
-    apt-get install -y curl gnupg && \
-    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs && \
-    npm install -g npm
+# Instala Node.js 18 directamente desde Alpine
+RUN apk add --no-cache nodejs npm
+
 
 WORKDIR /app
  
