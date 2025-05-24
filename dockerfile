@@ -11,6 +11,7 @@ WORKDIR /app
 COPY Backend/ ./Backend/
 WORKDIR /app/Backend
 COPY --from=Frontend-builder /app/Frontend/dist ./src/main/resources/static
+RUN chmod +x ./mvnw
 RUN ./mvnw package -DskipTests
 
 # Etapa 3: imagen final (sólo ejecutable)
