@@ -18,7 +18,6 @@ export async function iniciarSesion(username: string, password: string) {
         if (!contentType || !contentType.includes("application/json")) {
             const text = await response.text();
             console.error("Respuesta no JSON:", text);
-            console.log("/api/login")
             throw new Error("Respuesta del servidor no es JSON válida");
         }
 

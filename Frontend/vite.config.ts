@@ -10,8 +10,11 @@ export default defineConfig({
   base: '/',
   server: {
     proxy: {
-      '/api': apiBase
+      '/api': {
+        target: apiBase,
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api/, '')
+      }
     }
   }
-
 })
