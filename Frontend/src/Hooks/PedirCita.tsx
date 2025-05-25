@@ -58,7 +58,7 @@ export async function pedirCita(
         const tarea = "";
 
         if (demanda != "") {
-            const response2 = await fetch(`/api/informe/${id}`, {
+            const response2 = await fetch(`${API_BASE}/informe/${id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
