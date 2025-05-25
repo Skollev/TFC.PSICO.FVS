@@ -4,7 +4,9 @@ export async function confirmarCita(id: number) {
 
 
     try {
-        const response = await fetch(`/api/cita/confirmar/${id}`, {
+
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
+        const response = await fetch(`${API_BASE}/cita/confirmar/${id}`, {
             method: "Post",
             headers: {
                 "Content-Type": "application/json",

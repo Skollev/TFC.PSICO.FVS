@@ -3,8 +3,8 @@ import { InformeSesion } from "../Models/Interfaces";
 export async function obtenerInforme(id: number) {
     try {
         const token = localStorage.getItem("token");
-
-        const response = await fetch(`/api/informe/${id}`, {
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
+        const response = await fetch(`${API_BASE}/informe/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

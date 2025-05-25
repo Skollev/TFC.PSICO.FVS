@@ -4,8 +4,9 @@ import { InterfazCita } from "../Models/Interfaces";
 export async function actualizarCita(cita: InterfazCita) {
     try {
         const token = localStorage.getItem("token");
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-        const response = await fetch("/api/cita", {
+        const response = await fetch(`${API_BASE}/cita`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

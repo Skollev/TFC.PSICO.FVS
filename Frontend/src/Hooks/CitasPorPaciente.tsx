@@ -2,7 +2,8 @@ export async function citasPorPaciente() {
     try {
         const token = localStorage.getItem("token");
 
-        const response = await fetch(`/api/cita/dePaciente`, {
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
+        const response = await fetch(`${API_BASE}/cita/dePaciente`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

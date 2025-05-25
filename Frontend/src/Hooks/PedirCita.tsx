@@ -13,6 +13,7 @@ export async function pedirCita(
     const idPaciente = localStorage.getItem("id");
     let paciente: Paciente;
     let terapeuta: Terapeuta;
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
     try {
         paciente = await obtenerPaciente(Number(idPaciente));
     } catch (error) {
@@ -32,7 +33,7 @@ export async function pedirCita(
 
     console.log(terapeuta);
     try {
-        const response = await fetch("/api/cita/1", {
+        const response = await fetch(`${API_BASE}/cita/1`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

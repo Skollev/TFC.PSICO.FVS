@@ -3,8 +3,9 @@ import { InterfazCita } from "../Models/Interfaces";
 export async function citasPorTerapeuta() {
     try {
         const token = localStorage.getItem("token");
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-        const response = await fetch(`/api/cita/deTerapeuta`, {
+        const response = await fetch(`${API_BASE}/cita/deTerapeuta`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

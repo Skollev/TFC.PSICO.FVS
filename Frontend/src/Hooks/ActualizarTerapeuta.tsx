@@ -9,8 +9,9 @@ type props = {
 export async function actualizarTerapeuta({ nombre, apellido, foto, correo, colegiacion }: props) {
     try {
         const token = localStorage.getItem("token");
+        const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-        const response = await fetch("/api/terapeuta", {
+        const response = await fetch(`${API_BASE}/terapeuta`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

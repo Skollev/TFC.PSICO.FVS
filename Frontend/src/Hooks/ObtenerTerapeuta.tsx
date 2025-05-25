@@ -3,10 +3,10 @@ import { Terapeuta } from "../Models/Interfaces";
 export async function obtenerTerapeuta(id: number): Promise<Terapeuta> {
 
     const token = localStorage.getItem("token");
-
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
     try {
-        const response = await fetch(`/api/terapeuta/${id}`, {
+        const response = await fetch(`${API_BASE}/terapeuta/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

@@ -11,8 +11,11 @@ type Props = {
 };
 
 export async function crearPaciente({ nombre, apellido, foto, correo, username, password, consentimiento }: Props) {
+
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
     try {
-        const response = await fetch("/api/paciente", {
+        const response = await fetch(`${API_BASE}/paciente`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
