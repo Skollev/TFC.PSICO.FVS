@@ -1,6 +1,10 @@
 export async function iniciarSesion(username: string, password: string) {
+
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
+
     try {
-        const response = await fetch("/api/login", {
+        const response = await fetch(`${API_BASE}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
