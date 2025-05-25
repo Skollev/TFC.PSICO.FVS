@@ -6,6 +6,8 @@ export async function actualizarInforme(informeSesion: InformeSesion) {
         const token = localStorage.getItem("token");
         const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
+        console.log(informeSesion);
+
         const response = await fetch(`${API_BASE}/informe`, {
             method: "PUT",
             headers: {
