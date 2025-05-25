@@ -48,7 +48,7 @@ export default function SignUp() {
                 password: formData.password,
                 consentimiento: false,
             });
-            window.location.href = "http://localhost:5173";
+            window.location.href = "/";
         } catch (err) {
             alert('Error al crear la cuenta');
         }
