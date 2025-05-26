@@ -52,7 +52,7 @@ export default function FormularioModificarCita() {
 
     return (
         <Box display="flex" justifyContent="center" alignItems="center" padding={4}>
-            <Card sx={{ width: '60%', height: 'auto', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
+            <Card sx={{ width: '60%', height: '100%', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
                 <CardHeader
                     title="Modifica la cita"
                     sx={{
@@ -81,7 +81,6 @@ export default function FormularioModificarCita() {
                                 onChange={(e) => setFechaSesion(e.target.value)}
                                 required
                                 fullWidth
-                                placeholder='DD-MM-YY'
                             />
 
                             <Box alignSelf={"center"}>
