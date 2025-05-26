@@ -13,7 +13,7 @@ export async function actualizarInforme(informeSesion: InformeSesion) {
                 Authorization: `Bearer ${token}`,
 
             },
-            body: JSON.stringify({ informeSesion }),
+            body: JSON.stringify(informeSesion),
         });
 
         return response;
