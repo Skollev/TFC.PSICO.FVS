@@ -76,7 +76,7 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                             <Typography variant="subtitle1" fontWeight="bold">
                                 {cita.terapeuta?.nombre} {cita.terapeuta?.apellido}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body1" color="text.secondary">
                                 {cita.terapeuta?.correo}
                             </Typography>
                         </Box>
@@ -143,13 +143,13 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                         <Typography variant="subtitle1" gutterBottom>
                             <strong>Demanda:</strong>
                         </Typography>
-                        <Typography variant="body2" paragraph>
+                        <Typography variant="body1" >
                             {cita.informeSesion.demanda}
                         </Typography>
                         <Typography variant="subtitle1" gutterBottom>
                             <strong>Tarea:</strong>
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             {cita.informeSesion.tarea}
                         </Typography>
                     </DialogContent>

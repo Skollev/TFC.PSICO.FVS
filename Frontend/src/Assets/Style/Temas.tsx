@@ -63,15 +63,6 @@ const tema = createTheme({
             default: '#f2fef2',
         },
     },
-    components: {
-        MuiTypography: {
-            styleOverrides: {
-                body1: {
-                    color: 'white',
-                },
-            },
-        },
-    },
 });
 
 export default tema;
