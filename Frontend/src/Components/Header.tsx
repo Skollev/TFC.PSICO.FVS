@@ -46,28 +46,28 @@ export default function Header() {
             <List>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/">
-                        <ListItemText primary="Inicio" />
+                        <ListItemText secondary="Inicio" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     {id ? (
                         <ListItemButton component="a" href="/perfil">
-                            <ListItemText primary="Ver Perfil" />
+                            <ListItemText secondary="Ver Perfil" />
                         </ListItemButton>
                     ) : (
                         <ListItemButton component="a" href="/login">
-                            <ListItemText primary="Iniciar Sesión" />
+                            <ListItemText secondary="Iniciar Sesión" />
                         </ListItemButton>
                     )}
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/pedirCita">
-                        <ListItemText primary="Pedir cita" />
+                        <ListItemText secondary="Pedir cita" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/informacion-legal">
-                        <ListItemText primary="Información legal" />
+                        <ListItemText secondary="Información legal" />
                     </ListItemButton>
                 </ListItem>
             </List>
