@@ -72,11 +72,10 @@ export default function DatosPersonales({ usuario }: Props) {
                         <>
                             {!(usuario as Paciente).consentimiento ? (
                                 <Typography variant="h5" mb={1}>
-                                    <strong>Consentimiento:</strong> Acepta el <Link to="/consentimiento-informado">consentimiento informado</Link>
-                                    <br></br>
+                                    <strong>Da su consentimiento:</strong> Acepta el <Link to="/consentimiento-informado">consentimiento informado</Link>
                                     <Button
                                         onClick={() => manejarConsentimiento(usuario as Paciente)}
-                                        variant="contained"
+                                        variant="outlined"
                                         sx={{ mt: 2 }}
                                     >
                                         Aceptar
@@ -84,7 +83,7 @@ export default function DatosPersonales({ usuario }: Props) {
                                 </Typography>
                             ) : (
                                 <Typography variant="h5" mb={1}>
-                                    <strong>Consentimiento:</strong> Sí
+                                    <strong>Da su consentimiento:</strong> Sí
                                 </Typography>
                             )}
                         </>

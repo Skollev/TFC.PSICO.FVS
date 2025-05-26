@@ -81,6 +81,7 @@ export default function FormularioModificarCita() {
                                 onChange={(e) => setFechaSesion(e.target.value)}
                                 required
                                 fullWidth
+                                placeholder='DD-MM-YY'
                             />
 
                             <Box alignSelf={"center"}>

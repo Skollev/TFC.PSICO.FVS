@@ -43,7 +43,7 @@ export default function InformacionLegal() {
                         }}
                     >
                         <GavelIcon color="secondary" />
-                        <Typography variant="body2">Aviso Legal</Typography>
+                        <Typography variant="body1">Aviso Legal</Typography>
                     </Link>
 
                     <Link
@@ -63,7 +63,7 @@ export default function InformacionLegal() {
                         }}
                     >
                         <LockIcon color="secondary" />
-                        <Typography variant="body2">Política de Privacidad</Typography>
+                        <Typography variant="body1">Política de Privacidad</Typography>
                     </Link>
 
                     <Link
@@ -83,7 +83,7 @@ export default function InformacionLegal() {
                         }}
                     >
                         <CookieIcon color="secondary" />
-                        <Typography variant="body2">Política de Cookies</Typography>
+                        <Typography variant="body1">Política de Cookies</Typography>
                     </Link>
 
                     <Link
@@ -103,7 +103,7 @@ export default function InformacionLegal() {
                         }}
                     >
                         <AssignmentIndIcon color="secondary" />
-                        <Typography variant="body2">Consentimiento Informado</Typography>
+                        <Typography variant="body1">Consentimiento Informado</Typography>
                     </Link>
 
                     <Link
@@ -123,7 +123,7 @@ export default function InformacionLegal() {
                         }}
                     >
                         <InfoIcon color="secondary" />
-                        <Typography variant="body2">Información Sanitaria</Typography>
+                        <Typography variant="body1">Información Sanitaria</Typography>
                     </Link>
                 </Box>
             </Paper>

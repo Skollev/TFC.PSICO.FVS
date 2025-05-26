@@ -29,14 +29,13 @@ const FormularioCita: React.FC = () => {
 
     return (
         <Box display="flex" justifyContent="center" alignItems="center" padding={4}>
-            <Card sx={{ width: '60%', height: '60vh', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
+            <Card sx={{ width: '60%', height: '60vh', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column', color: "white" }}>
                 <CardHeader
                     title="Solicitar una Cita"
                     subheader="Selecciona tu preferencia horaria y cuéntanos el motivo"
                     sx={{
                         textAlign: 'center',
                         bgcolor: '#198754',
-                        color: 'white'
                     }}
                 />
                 <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
