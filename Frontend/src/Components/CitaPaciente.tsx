@@ -12,7 +12,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import PaidIcon from '@mui/icons-material/Paid';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import { confirmarCita } from '../Hooks/ConfirmarCita';
-import { cancelarCita } from '../Hooks/cancelarCita';
+import { cancelarCita } from '../Hooks/CancelarCita';
 
 interface Props {
     cita: CitaInterface;
