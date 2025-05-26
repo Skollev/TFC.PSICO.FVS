@@ -14,8 +14,8 @@ interface Props {
 
 function manejarConsentimiento(usuario: Paciente) {
     usuario.consentimiento = true;
-    console.log(usuario)
     darConsentimiento(usuario as Paciente);
+    window.location.reload();
 }
 
 export default function DatosPersonales({ usuario }: Props) {

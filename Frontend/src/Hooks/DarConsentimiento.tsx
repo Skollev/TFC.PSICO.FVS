@@ -13,7 +13,7 @@ export async function darConsentimiento(paciente: Paciente) {
                 Authorization: `Bearer ${token}`,
 
             },
-            body: JSON.stringify({ paciente }),
+            body: JSON.stringify(paciente),
         });
 
         return response;
