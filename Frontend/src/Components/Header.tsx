@@ -41,33 +41,34 @@ export default function Header() {
             sx={{
                 width: "auto",
                 backgroundColor: "#198754",
+                color: "white"
             }}
         >
             <List>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/">
-                        <ListItemText secondary="Inicio" />
+                        <ListItemText primary="Inicio" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     {id ? (
                         <ListItemButton component="a" href="/perfil">
-                            <ListItemText secondary="Ver Perfil" />
+                            <ListItemText primary="Ver Perfil" />
                         </ListItemButton>
                     ) : (
                         <ListItemButton component="a" href="/login">
-                            <ListItemText secondary="Iniciar Sesión" />
+                            <ListItemText primary="Iniciar Sesión" />
                         </ListItemButton>
                     )}
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/pedirCita">
-                        <ListItemText secondary="Pedir cita" />
+                        <ListItemText primary="Pedir cita" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton component="a" href="/informacion-legal">
-                        <ListItemText secondary="Información legal" />
+                        <ListItemText primary="Información legal" />
                     </ListItemButton>
                 </ListItem>
             </List>
