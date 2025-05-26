@@ -12,6 +12,13 @@ interface Props {
     usuario: Paciente | Terapeuta;
 }
 
+function manejarConsentimiento(usuario: Paciente) {
+    usuario.consentimiento = true;
+    return () => {
+        darConsentimiento(usuario);
+    };
+}
+
 export default function DatosPersonales({ usuario }: Props) {
     const esPaciente = usuario.rol === "PACIENTE";
 
@@ -63,24 +70,25 @@ export default function DatosPersonales({ usuario }: Props) {
                     </Typography>
 
                     {esPaciente ? (
-                        <Typography variant="h5" mb={1}>
+                        <>
                             {!(usuario as Paciente).consentimiento ? (
-                                <>
+                                <Typography variant="h5" mb={1}>
                                     <strong>Consentimiento:</strong> Acepta el <Link to="/consentimiento-informado">consentimiento informado</Link>
+                                    <br></br>
                                     <Button
-                                        onClick={() => darConsentimiento(usuario as Paciente)}
+                                        onClick={() => manejarConsentimiento(usuario as Paciente)}
                                         variant="contained"
                                         sx={{ mt: 2 }}
                                     >
                                         Aceptar
                                     </Button>
-                                </>
+                                </Typography>
                             ) : (
-                                <>
+                                <Typography variant="h5" mb={1}>
                                     <strong>Consentimiento:</strong> Sí
-                                </>
+                                </Typography>
                             )}
-                        </Typography>
+                        </>
                     ) : (
                         <Typography variant="h5" mb={1}>
                             <strong>Colegiación:</strong> {(usuario as Terapeuta).colegiacion}
