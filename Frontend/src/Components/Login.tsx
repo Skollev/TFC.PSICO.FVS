@@ -87,17 +87,19 @@ export default function Login() {
                         Entrar
                     </Button>
 
-                    <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-                        ¿No tienes cuenta?{' '}
-                        <Link href="/crear-cuenta" color="primary">
-                            Crea una.
-                        </Link>
-                    </Typography>
-                    <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-                        <Link href="/" color="primary">
-                            Volver al inicio
-                        </Link>
-                    </Typography>
+                    <Box mt={3} textAlign="center">
+                        <Typography variant="body2">
+                            ¿No tienes cuenta?{' '}
+                            <Link href="/crear-cuenta" color="primary">
+                                Crea una.
+                            </Link>
+                        </Typography>
+                        <Typography variant="body2" mt={1}>
+                            <Link href="/" color="primary">
+                                Volver al inicio
+                            </Link>
+                        </Typography>
+                    </Box>
                 </Box>
             </Paper>
         </Grid>

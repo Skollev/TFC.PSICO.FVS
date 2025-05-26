@@ -136,17 +136,20 @@ export default function SignUp() {
                         Registrarse
                     </Button>
 
-                    <Typography variant="body2" align="center" sx={{ mt: 2 }}>
-                        ¿Ya tienes una cuenta?{' '}
-                        <Link href="/login" color="primary">
-                            Inicia sesión.
-                        </Link>
-                    </Typography>
-                    <Typography variant="body2" align="center" sx={{ mt: 1 }}>
-                        <Link href="/" color="primary">
-                            Volver al inicio
-                        </Link>
-                    </Typography>
+                    <Box mt={3} textAlign="center">
+                        <Typography variant="body2">
+                            ¿Ya tienes una cuenta?{' '}
+                            <Link href="/login" color="primary">
+                                Inicia sesión.
+                            </Link>
+                        </Typography>
+                        <Typography variant="body2" mt={1}>
+                            <Link href="/" color="primary">
+                                Volver al inicio
+                            </Link>
+                        </Typography>
+                    </Box>
+
                 </Box>
             </Paper>
         </Grid>
