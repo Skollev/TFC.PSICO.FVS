@@ -20,7 +20,7 @@ export default function PaginaPerfil() {
             const idString = localStorage.getItem("id") ?? "0";
             const id = parseInt(idString);
             const rol = localStorage.getItem("rol");
-            console.log("Citas:", usuario?.citas); // Asegúrate que es un array
+            console.log("Citas:", usuario?.citas);
 
             try {
                 if (rol === "PACIENTE") {
@@ -48,12 +48,7 @@ export default function PaginaPerfil() {
         <>
             <Header />
             <DatosPersonales
-                fotoPerfil={usuario.foto}
-                nombre={usuario.nombre}
-                correo={usuario.correo}
-                apellido={usuario.apellido}
-                rol={usuario.rol}
-                variable={usuario.rol == "PACIENTE" ? usuario.constenimiento : usuario.colegiacion}
+                usuario={usuario}
             />
 
             <Grid size={12}>

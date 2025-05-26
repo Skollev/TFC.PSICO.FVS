@@ -46,28 +46,28 @@ export default function Footer() {
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <InstagramIcon color="info" />
                         <Link href="https://www.instagram.com/rociopd_psico/">
-                            <Typography variant="body1" color="white">rociopd_psico</Typography>
+                            <Typography variant="body2" color="white">rociopd_psico</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <FacebookIcon color="info" />
                         <Link href="https://www.facebook.com/profile.php?id=61552976534860">
-                            <Typography variant="body1" color="white">Rocío Pérez Delgado</Typography>
+                            <Typography variant="body2" color="white">Rocío Pérez Delgado</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <LanguageIcon color="info" />
                         <Link href="https://www.doctoralia.es/rocio-perez-delgado/psicologo/ecija">
-                            <Typography variant="body1" color="white">Página de Doctoralia</Typography>
+                            <Typography variant="body2" color="white">Página de Doctoralia</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <LanguageIcon color="info" />
                         <Link href="https://www.mundopsicologos.com/centros/rocio-perez-delgado">
-                            <Typography variant="body1" color="white">Página de Mundo Psicólogos</Typography>
+                            <Typography variant="body2" color="white">Página de Mundo Psicólogos</Typography>
                         </Link>
                     </Grid>
                 </Grid>
@@ -97,35 +97,35 @@ export default function Footer() {
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <GavelIcon color="info" />
                         <Link href="/aviso-legal">
-                            <Typography variant="body1" color="white">Aviso Legal</Typography>
+                            <Typography variant="body2" color="white">Aviso Legal</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <LockIcon color="info" />
                         <Link href="/politica-privacidad">
-                            <Typography variant="body1" color="white">Política de Privacidad</Typography>
+                            <Typography variant="body2" color="white">Política de Privacidad</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <CookieIcon color="info" />
                         <Link href="/politica-cookies">
-                            <Typography variant="body1" color="white">Política de Cookies</Typography>
+                            <Typography variant="body2" color="white">Política de Cookies</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <AssignmentIndIcon color="info" />
                         <Link href="/consentimiento-informado">
-                            <Typography variant="body1" color="white">Consentimiento Informado</Typography>
+                            <Typography variant="body2" color="white">Consentimiento Informado</Typography>
                         </Link>
                     </Grid>
 
                     <Grid container justifyContent="center" alignItems="center" sx={{ gap: 1 }}>
                         <InfoIcon color="info" />
                         <Link href="/informacion-sanitaria">
-                            <Typography variant="body1" color="white">Información Sanitaria</Typography>
+                            <Typography variant="body2" color="white">Información Sanitaria</Typography>
                         </Link>
                     </Grid>
                 </Grid>

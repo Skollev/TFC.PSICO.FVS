@@ -19,6 +19,7 @@ export default function SignUp() {
         password: '',
         confirmarPassword: '',
         mayorDeEdad: false,
+        consentimiento: false
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

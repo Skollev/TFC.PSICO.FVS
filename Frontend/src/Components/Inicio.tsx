@@ -36,7 +36,7 @@ export default function Inicio() {
             <Animaciones />
             {/* Sección de bienvenida */}
             <Grid container spacing={4} justifyContent="center" alignItems="center">
-                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 5 }} display="flex" justifyContent="center">
+                <Grid size={{ xs: 12, sm: 12, md: 6, lg: 5 }} display="flex" justifyContent="center">
                     <Box
                         component="img"
                         src={crecimiento}
@@ -46,7 +46,7 @@ export default function Inicio() {
                         }}
                     />
                 </Grid>
-                <Grid size={{ xs: 12, sm: 6, md: 6, lg: 7 }}>
+                <Grid size={{ xs: 12, sm: 12, md: 6, lg: 7 }}>
                     <Typography
                         variant="h3"
                         ref={typographyRef}

@@ -35,13 +35,13 @@ const tema = createTheme({
         body1: {
             fontWeight: 400,
             fontSize: '1rem',
-            color: 'white',
+            color: 'black',
             lineHeight: 1.6,
         },
         body2: {
             fontWeight: 400,
             fontSize: '1rem',
-            color: 'black',
+            color: 'white',
             lineHeight: 1.6,
         },
         button: {

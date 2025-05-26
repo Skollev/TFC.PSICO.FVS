@@ -4,17 +4,17 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import { darConsentimiento } from "../Hooks/DarConsentimiento";
+import { Paciente, Terapeuta } from "../Models/Interfaces";
 
-type Props = {
-    nombre: string;
-    fotoPerfil: string;
-    correo: string;
-    apellido: string;
-    rol: string;
-    variable: string;
-};
+interface Props {
+    usuario: Paciente | Terapeuta;
+}
 
-export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido, rol, variable }: Props) {
+export default function DatosPersonales({ usuario }: Props) {
+    const esPaciente = usuario.rol === "PACIENTE";
+
     return (
         <Grid container justifyContent="center" px={2} py={4}>
             <Paper
@@ -39,8 +39,8 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido, 
                     }}
                 >
                     <Avatar
-                        alt={`${nombre} ${apellido}`}
-                        src={fotoPerfil}
+                        alt={`${usuario.nombre} ${usuario.apellido}`}
+                        src={usuario.foto}
                         sx={{
                             width: { xs: 120, sm: 160, md: 200 },
                             height: { xs: 120, sm: 160, md: 200 },
@@ -55,22 +55,41 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido, 
                     </Typography>
 
                     <Typography variant="h5" mb={1}>
-                        <strong>Nombre:</strong> {nombre} {apellido}
+                        <strong>Nombre:</strong> {usuario.nombre} {usuario.apellido}
                     </Typography>
 
                     <Typography variant="h5" mb={1}>
-                        <strong>Correo:</strong> {correo}
+                        <strong>Correo:</strong> {usuario.correo}
                     </Typography>
 
-                    {rol == "PACIENTE" ? (<Typography variant="h5" mb={1}>
-                        <strong>Consentimiento:</strong> {variable}
-                    </Typography>) : (<Typography variant="h5" mb={1}>
-                        <strong>Colegiacion:</strong> {variable}
-                    </Typography>)}
-
+                    {esPaciente ? (
+                        <Typography variant="h5" mb={1}>
+                            {!(usuario as Paciente).consentimiento ? (
+                                <>
+                                    <strong>Consentimiento:</strong> Acepta el <Link to="/consentimiento-informado">consentimiento informado</Link>
+                                    <Button
+                                        onClick={() => darConsentimiento(usuario as Paciente)}
+                                        variant="contained"
+                                        sx={{ mt: 2 }}
+                                    >
+                                        Aceptar
+                                    </Button>
+                                </>
+                            ) : (
+                                <>
+                                    <strong>Consentimiento:</strong> Sí
+                                </>
+                            )}
+                        </Typography>
+                    ) : (
+                        <Typography variant="h5" mb={1}>
+                            <strong>Colegiación:</strong> {(usuario as Terapeuta).colegiacion}
+                        </Typography>
+                    )}
                 </Box>
-                {localStorage.getItem("rol") == "PACIENTE" ? (
-                    <Box alignSelf={"flex-end"}>
+
+                {esPaciente && (
+                    <Box alignSelf="flex-end">
                         <Button
                             variant="contained"
                             color="primary"
@@ -79,8 +98,8 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido, 
                             Pedir cita
                         </Button>
                     </Box>
-                ) : null}
+                )}
             </Paper>
-        </Grid >
+        </Grid>
     );
 }
