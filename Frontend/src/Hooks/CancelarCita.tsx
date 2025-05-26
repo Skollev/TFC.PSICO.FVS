@@ -13,7 +13,7 @@ export async function cancelarCita(id: number) {
 
         const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const response = await fetch(`${API_BASE}/cita/${id}`, {
-            method: "Delete",
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
