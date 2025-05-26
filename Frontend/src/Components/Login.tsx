@@ -87,14 +87,14 @@ export default function Login() {
                         Entrar
                     </Button>
 
-                    <Box mt={3} textAlign="center">
+                    <Box textAlign="center">
                         <Typography variant="body2">
                             ¿No tienes cuenta?{' '}
                             <Link href="/crear-cuenta" color="primary">
                                 Crea una.
                             </Link>
                         </Typography>
-                        <Typography variant="body2" mt={1}>
+                        <Typography variant="body2">
                             <Link href="/" color="primary">
                                 Volver al inicio
                             </Link>

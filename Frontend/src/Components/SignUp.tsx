@@ -136,14 +136,14 @@ export default function SignUp() {
                         Registrarse
                     </Button>
 
-                    <Box mt={3} textAlign="center">
+                    <Box textAlign="center">
                         <Typography variant="body2">
                             ¿Ya tienes una cuenta?{' '}
                             <Link href="/login" color="primary">
                                 Inicia sesión.
                             </Link>
                         </Typography>
-                        <Typography variant="body2" mt={1}>
+                        <Typography variant="body2">
                             <Link href="/" color="primary">
                                 Volver al inicio
                             </Link>
