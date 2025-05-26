@@ -1,38 +1,30 @@
 export async function cancelarCita(id: number) {
-
     const confirmacion = window.confirm("¿Estás seguro de que deseas cancelar esta cita?");
-    if (!confirmacion) {
-        return;
-    }
-
+    if (!confirmacion) return;
 
     const token = localStorage.getItem("token");
 
-
     try {
-
         const API_BASE = import.meta.env.VITE_API_BASE_URL;
         const response = await fetch(`${API_BASE}/cita/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
-
-            }
+            },
         });
 
+        const mensaje = await response.text();
+
         if (!response.ok) {
-            throw new Error(`Error en la petición: ${response.statusText}`);
+            alert(`Error al cancelar la cita: ${mensaje}`);
+            throw new Error(`Error en la petición: ${mensaje}`);
         }
 
-
-        window.location.reload();
         alert("Cita cancelada correctamente");
-        return response;
+        window.location.reload();
 
     } catch (error) {
         console.error("Error al cancelar la cita en el frontend:", error);
-        throw error;
     }
 }
-
