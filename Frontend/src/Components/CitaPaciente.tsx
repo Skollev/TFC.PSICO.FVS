@@ -12,6 +12,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import PaidIcon from '@mui/icons-material/Paid';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import { confirmarCita } from '../Hooks/ConfirmarCita';
+import { cancelarCita } from '../Hooks/cancelarCita';
 
 interface Props {
     cita: CitaInterface;
@@ -133,6 +134,13 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                             Confirmar asistencia
                         </Button>
                     )}
+                    <Button
+                        variant="outlined"
+                        color="error"
+                        onClick={() => cancelarCita(cita.id)}
+                    >
+                        Cancelar cita
+                    </Button>
                 </CardActions>
             </Card>
 

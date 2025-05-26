@@ -20,7 +20,6 @@ export default function PaginaPerfil() {
             const idString = localStorage.getItem("id") ?? "0";
             const id = parseInt(idString);
             const rol = localStorage.getItem("rol");
-            console.log("Citas:", usuario?.citas);
 
             try {
                 if (rol === "PACIENTE") {
