@@ -8,7 +8,7 @@ import {
     Link,
 } from '@mui/material';
 import { useState } from 'react';
-import { iniciarSesion } from '../Hooks/IniciarSesion.tsx'; // Asegúrate de que este hook esté correctamente exportado
+import { iniciarSesion } from '../Hooks/IniciarSesion.tsx';
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -29,8 +29,6 @@ export default function Login() {
 
         try {
             await iniciarSesion(formData.username, formData.password);
-
-            // Redirige al usuario tras iniciar sesión exitosamente
             window.location.href = '/';
         } catch (error) {
             alert('Error al iniciar sesión');
@@ -43,8 +41,17 @@ export default function Login() {
             justifyContent="center"
             alignItems="center"
             minHeight="100vh"
+            sx={{ p: { xs: 2, sm: 3 } }}
         >
-            <Paper elevation={3} sx={{ padding: 4, width: 320 }}>
+            <Paper
+                elevation={3}
+                sx={{
+                    p: 4,
+                    width: { xs: '100%', sm: 400, md: 320 },
+                    maxWidth: '100%',
+                    boxSizing: 'border-box',
+                }}
+            >
                 <Typography variant="h4" align="center">
                     Iniciar Sesión
                 </Typography>

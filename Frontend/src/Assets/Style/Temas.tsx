@@ -35,7 +35,7 @@ const tema = createTheme({
         body1: {
             fontWeight: 400,
             fontSize: '1rem',
-            color: 'black',
+            color: 'white',
             lineHeight: 1.6,
         },
         body2: {
@@ -55,6 +55,9 @@ const tema = createTheme({
         },
         secondary: {
             main: '#000000',
+        },
+        info: {
+            main: '#ffffff'
         },
         background: {
             default: '#f2fef2',

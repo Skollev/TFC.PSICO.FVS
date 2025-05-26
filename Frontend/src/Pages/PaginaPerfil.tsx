@@ -52,6 +52,8 @@ export default function PaginaPerfil() {
                 nombre={usuario.nombre}
                 correo={usuario.correo}
                 apellido={usuario.apellido}
+                rol={usuario.rol}
+                variable={usuario.rol == "PACIENTE" ? usuario.constenimiento : usuario.colegiacion}
             />
 
             <Grid size={12}>

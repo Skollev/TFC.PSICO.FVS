@@ -10,9 +10,11 @@ type Props = {
     fotoPerfil: string;
     correo: string;
     apellido: string;
+    rol: string;
+    variable: string;
 };
 
-export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido }: Props) {
+export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido, rol, variable }: Props) {
     return (
         <Grid container justifyContent="center" px={2} py={4}>
             <Paper
@@ -59,6 +61,12 @@ export default function DatosPersonales({ nombre, fotoPerfil, correo, apellido }
                     <Typography variant="h5" mb={1}>
                         <strong>Correo:</strong> {correo}
                     </Typography>
+
+                    {rol == "PACIENTE" ? (<Typography variant="h5" mb={1}>
+                        <strong>Consentimiento:</strong> {variable}
+                    </Typography>) : (<Typography variant="h5" mb={1}>
+                        <strong>Colegiacion:</strong> {variable}
+                    </Typography>)}
 
                 </Box>
                 {localStorage.getItem("rol") == "PACIENTE" ? (
