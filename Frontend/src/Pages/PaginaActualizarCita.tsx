@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import Footer from "../Components/Footer";
 import FormularioModificarCita from "../Components/FormularioModificarCita";
 import Header from "../Components/Header";
@@ -13,7 +14,9 @@ export default function PaginaActualizarInforme() {
     return (
         <>
             <Header />
-            <FormularioModificarCita />
+            <Grid height={"80%"}>
+                <FormularioModificarCita />
+            </Grid>
             <Footer />
         </>
     )
