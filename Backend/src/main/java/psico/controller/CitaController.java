@@ -130,7 +130,7 @@ public class CitaController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idCitaActual}")
     @Operation(summary = "Eliminar una cita por ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "202", description = "Cita eliminada exitosamente"),
