@@ -5,6 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import psico.service.CitaService;
+import psico.service.InformeSesionService;
+import psico.service.PacienteService;
 import psico.service.TerapeutaService;
 
 @SpringBootApplication
@@ -13,13 +16,26 @@ public class PsicoApplication implements CommandLineRunner {
     @Autowired
     private TerapeutaService terapeutaService;
 
+    @Autowired
+    private PacienteService pacienteService;
+
+    @Autowired
+    private InformeSesionService informeService;
+
+    @Autowired
+    private CitaService citaService;
+
     public static void main(String[] args) {
         SpringApplication.run(PsicoApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        // Invocar el método para crear el administrador por defecto si no existe
+
+        informeService.eliminarTodos();
+        citaService.eliminarTodos();
+        pacienteService.eliminarTodos();
+        terapeutaService.eliminarTodos();
 
         terapeutaService.terapeutaPorDefecto();
     }

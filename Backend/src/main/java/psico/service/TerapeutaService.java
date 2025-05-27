@@ -61,6 +61,10 @@ public class TerapeutaService {
 		return terapeutaRepository.findByUsername(username);
 	}
 
+	public void eliminarTodos() {
+		terapeutaRepository.deleteAll();
+	}
+
 	@Transactional
 	public boolean deleteTerapeuta() {
 		Terapeuta terapeuta = JWTUtils.userLogin();
@@ -74,14 +78,15 @@ public class TerapeutaService {
 	public void terapeutaPorDefecto() {
 		if (this.getAllTerapeutas().size() <= 0) {
 			Terapeuta defaultAdmin = new Terapeuta();
-			defaultAdmin.setUsername("admin");
+			defaultAdmin.setUsername("rpd");
 			defaultAdmin.setPassword(passwordEncoder.encode("1234"));
-			defaultAdmin.setNombre("admin");
-			defaultAdmin.setApellido("Admin");
-			defaultAdmin.setCorreo("admin@default.com");
-			defaultAdmin.setFoto("http://default.png");
+			defaultAdmin.setNombre("Rocío");
+			defaultAdmin.setApellido("Pérez Delgado");
+			defaultAdmin.setCorreo("rpdpsicologa@gmail.com");
+			defaultAdmin.setFoto(
+					"https://scontent.fsvq4-1.fna.fbcdn.net/v/t39.30808-6/398315129_122106254072099217_6075357783283956060_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=O01nNVHLoAkQ7kNvwG4-syl&_nc_oc=AdnW9ABwO6u2fZJZ_F6z8_aEirVRnUt64kcPR4kkTOeUJhj0XvPNu5__0ke6FmA0lKo&_nc_zt=23&_nc_ht=scontent.fsvq4-1.fna&_nc_gid=TTJYOJ4hc-cUUt1X3KagAQ&oh=00_AfKeD_TfQYiqDON_Wt3h_Svc7VOqktB1Ah4DiVmQZL9G5A&oe=683BD956");
 			defaultAdmin.setRol(Roles.TERAPEUTA);
-			defaultAdmin.setColegiacion("XXYYZZZZZ");
+			defaultAdmin.setColegiacion("AN12135");
 
 			System.out.println("Usuario Admin creado por defecto");
 			terapeutaRepository.save(defaultAdmin);

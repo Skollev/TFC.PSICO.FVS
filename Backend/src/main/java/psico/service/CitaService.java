@@ -125,6 +125,10 @@ public class CitaService {
 		return res;
 	}
 
+	public void eliminarTodos() {
+		citaRepository.deleteAll();
+	}
+
 	@Transactional
 	public boolean deleteCita(int id) {
 		Optional<Cita> citaOpt = citaRepository.findById(id);

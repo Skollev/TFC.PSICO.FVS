@@ -100,6 +100,10 @@ public class InformeSesionService {
         return null;
     }
 
+    public void eliminarTodos() {
+        informeSesionRepository.deleteAll();
+    }
+
     public boolean deleteInformeSesion(int id) {
         boolean res = false;
         Optional<InformeSesion> informe0 = informeSesionRepository.findById(id);

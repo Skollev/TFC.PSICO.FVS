@@ -62,6 +62,10 @@ public class PacienteService {
 		return pacienteRepository.findByUsername(username);
 	}
 
+	public void eliminarTodos() {
+		pacienteRepository.deleteAll();
+	}
+
 	@Transactional
 	public boolean deletePaciente() {
 		Paciente paciente = JWTUtils.userLogin();
