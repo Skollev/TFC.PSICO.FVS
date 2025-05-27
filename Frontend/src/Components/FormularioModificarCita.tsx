@@ -54,7 +54,7 @@ export default function FormularioModificarCita() {
 
     return (
         <Box display="flex" justifyContent="center" alignItems="center" padding={4}>
-            <Card sx={{ width: '60%', height: '100%', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
+            <Card sx={{ width: '60%', height: 'auto%', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
                 <CardHeader
                     title="Modifica la cita"
                     sx={{
