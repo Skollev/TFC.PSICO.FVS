@@ -47,13 +47,13 @@ public class SecurityConfiguration {
 				.requestMatchers(HttpMethod.POST, "/cita/pagar/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/cita/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAuthority("PACIENTE")
+				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 
 				// INFORME SESION
 				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
 				.requestMatchers(HttpMethod.GET, "/informe/cita/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/informe/{idCita}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
-				.requestMatchers(HttpMethod.DELETE, "/informe/{id}").hasAuthority("TERAPEUTA")
+				.requestMatchers(HttpMethod.DELETE, "/informe/{id}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 
 				// PACIENTE
 				.requestMatchers(HttpMethod.GET, "/paciente").hasAuthority("TERAPEUTA")
