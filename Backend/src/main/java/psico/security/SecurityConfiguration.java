@@ -47,7 +47,7 @@ public class SecurityConfiguration {
 				.requestMatchers(HttpMethod.POST, "/cita/pagar/{id}").hasAuthority("TERAPEUTA")
 				.requestMatchers(HttpMethod.POST, "/cita/confirmar/{id}").hasAuthority("PACIENTE")
 				.requestMatchers(HttpMethod.POST, "/cita/{id}").hasAuthority("PACIENTE")
-				.requestMatchers(HttpMethod.DELETE, "/cita/{id}").hasAnyAuthority("TERAPEUTA", "PACIENTE")
+				.requestMatchers(HttpMethod.DELETE, "/cita/*").hasAnyAuthority("TERAPEUTA", "PACIENTE")
 
 				// INFORME SESION
 				.requestMatchers(HttpMethod.GET, "/informe/{id}").hasAnyAuthority("PACIENTE", "TERAPEUTA")
