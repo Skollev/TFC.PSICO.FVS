@@ -127,66 +127,48 @@ public class CitaService {
 
 	@Transactional
 	public boolean deleteCita(int id) {
-
-		boolean res = false;
-		Optional<Cita> cita0 = citaRepository.findById(id);
-		if (cita0.isPresent()) {
-			Usuario usuario = JWTUtils.userLogin();
-
-			if (usuario instanceof Terapeuta) {
-				Terapeuta terapeuta = (Terapeuta) usuario;
-
-				if (terapeuta != null) {
-
-					Cita cita = cita0.get();
-
-					if (terapeuta.getCitas().contains(cita)) {
-
-						terapeuta.getCitas().remove(cita);
-
-						List<Paciente> pacientes = pacienteRepository.findAll();
-
-						for (Paciente paciente : pacientes) {
-
-							if (paciente.getCitas().contains(cita)) {
-
-								paciente.getCitas().remove(cita);
-
-							}
-						}
-					} else if (usuario instanceof Paciente) {
-						Paciente paciente = (Paciente) usuario;
-
-						if (paciente != null) {
-
-							Cita citaP = cita0.get();
-
-							if (paciente.getCitas().contains(citaP)) {
-
-								paciente.getCitas().remove(citaP);
-
-								List<Terapeuta> terapeutas = terapeutaRepository.findAll();
-
-								for (Terapeuta terapeutaP : terapeutas) {
-
-									if (terapeutaP.getCitas().contains(citaP)) {
-
-										terapeutaP.getCitas().remove(citaP);
-
-									}
-								}
-							}
-						}
-					} else {
-						// otro caso o error
-					}
-
-					citaRepository.deleteById(id);
-					res = true;
-				}
-			}
+		Optional<Cita> citaOpt = citaRepository.findById(id);
+		if (citaOpt.isEmpty()) {
+			return false;
 		}
-		return res;
+
+		Usuario usuario = JWTUtils.userLogin();
+		if (usuario == null) {
+			return false;
+		}
+
+		Cita cita = citaOpt.get();
+
+		if (usuario instanceof Terapeuta terapeuta) {
+			if (!terapeuta.getCitas().contains(cita)) {
+				return false;
+			}
+			terapeuta.getCitas().remove(cita);
+			terapeutaRepository.save(terapeuta);
+
+			Paciente paciente = cita.getPaciente();
+			if (paciente != null && paciente.getCitas().contains(cita)) {
+				paciente.getCitas().remove(cita);
+				pacienteRepository.save(paciente);
+			}
+		} else if (usuario instanceof Paciente paciente) {
+			if (!paciente.getCitas().contains(cita)) {
+				return false;
+			}
+			paciente.getCitas().remove(cita);
+			pacienteRepository.save(paciente);
+
+			Terapeuta terapeuta = cita.getTerapeuta();
+			if (terapeuta != null && terapeuta.getCitas().contains(cita)) {
+				terapeuta.getCitas().remove(cita);
+				terapeutaRepository.save(terapeuta);
+			}
+		} else {
+			return false;
+		}
+
+		citaRepository.deleteById(id);
+		return true;
 	}
 
 	public boolean confirmarCita(int id) {
