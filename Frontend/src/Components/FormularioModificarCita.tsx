@@ -15,13 +15,11 @@ import { useParams } from 'react-router-dom';
 import { citasPorId } from '../Hooks/CitasPorId';
 
 export default function FormularioModificarCita() {
-
     const { id } = useParams<{ id: string }>();
-
     const [cita, setCita] = useState<InterfazCita | null>(null);
-
     const [fechaSesion, setFechaSesion] = useState("");
     const [linkSesion, setLinkSesion] = useState('');
+    const [cargando, setCargando] = useState(true);
 
     useEffect(() => {
         if (id) {
@@ -30,8 +28,12 @@ export default function FormularioModificarCita() {
                     setCita(data);
                     setLinkSesion(data.link || '');
                     setFechaSesion(data.fecha || "");
+                    setCargando(false);
                 })
-                .catch((err) => console.error("Error al obtener cita:", err));
+                .catch((err) => {
+                    console.error("Error al obtener cita:", err);
+                    setCargando(false);
+                });
         }
     }, [id]);
 
@@ -50,9 +52,11 @@ export default function FormularioModificarCita() {
         }
     };
 
+    if (cargando) return null;
+
     return (
         <Box display="flex" justifyContent="center" alignItems="center" padding={4}>
-            <Card sx={{ width: '60%', height: '100%', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
+            <Card sx={{ width: '60%', height: '100vh', borderRadius: 4, boxShadow: 6, display: 'flex', flexDirection: 'column' }}>
                 <CardHeader
                     title="Modifica la cita"
                     sx={{
@@ -64,7 +68,6 @@ export default function FormularioModificarCita() {
                 <CardContent sx={{ flexGrow: 1 }}>
                     <form onSubmit={handleSubmit}>
                         <Stack spacing={3}>
-
                             <TextField
                                 label="Enlace de sesión (opcional)"
                                 type="url"
