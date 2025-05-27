@@ -14,6 +14,7 @@ import psico.entity.Cita;
 import psico.entity.InformeSesion;
 import psico.entity.Paciente;
 import psico.entity.Terapeuta;
+import psico.entity.Usuario;
 import psico.repository.CitaRepository;
 import psico.repository.PacienteRepository;
 import psico.repository.TerapeutaRepository;
@@ -130,24 +131,54 @@ public class CitaService {
 		boolean res = false;
 		Optional<Cita> cita0 = citaRepository.findById(id);
 		if (cita0.isPresent()) {
-			Terapeuta terapeuta = JWTUtils.userLogin();
-			if (terapeuta != null) {
+			Usuario usuario = JWTUtils.userLogin();
 
-				Cita cita = cita0.get();
+			if (usuario instanceof Terapeuta) {
+				Terapeuta terapeuta = (Terapeuta) usuario;
 
-				if (terapeuta.getCitas().contains(cita)) {
+				if (terapeuta != null) {
 
-					terapeuta.getCitas().remove(cita);
+					Cita cita = cita0.get();
 
-					List<Paciente> pacientes = pacienteRepository.findAll();
+					if (terapeuta.getCitas().contains(cita)) {
 
-					for (Paciente paciente : pacientes) {
+						terapeuta.getCitas().remove(cita);
 
-						if (paciente.getCitas().contains(cita)) {
+						List<Paciente> pacientes = pacienteRepository.findAll();
 
-							paciente.getCitas().remove(cita);
+						for (Paciente paciente : pacientes) {
 
+							if (paciente.getCitas().contains(cita)) {
+
+								paciente.getCitas().remove(cita);
+
+							}
 						}
+					} else if (usuario instanceof Paciente) {
+						Paciente paciente = (Paciente) usuario;
+
+						if (paciente != null) {
+
+							Cita citaP = cita0.get();
+
+							if (paciente.getCitas().contains(citaP)) {
+
+								paciente.getCitas().remove(citaP);
+
+								List<Terapeuta> terapeutas = terapeutaRepository.findAll();
+
+								for (Terapeuta terapeutaP : terapeutas) {
+
+									if (terapeutaP.getCitas().contains(citaP)) {
+
+										terapeutaP.getCitas().remove(citaP);
+
+									}
+								}
+							}
+						}
+					} else {
+						// otro caso o error
 					}
 
 					citaRepository.deleteById(id);
