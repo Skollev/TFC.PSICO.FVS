@@ -4,8 +4,14 @@ export async function cancelarCita(id: number) {
 
     const token = localStorage.getItem("token");
 
+
+
+
     try {
         const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
+        console.log("URL final:", `${API_BASE}/cita/${id}`);
+
         const response = await fetch(`${API_BASE}/cita/${id}`, {
             method: "DELETE",
             headers: {
