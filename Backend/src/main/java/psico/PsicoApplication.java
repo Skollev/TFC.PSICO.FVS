@@ -32,8 +32,8 @@ public class PsicoApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        informeService.eliminarTodos();
         citaService.eliminarTodos();
+        informeService.eliminarTodos();
         pacienteService.eliminarTodos();
         terapeutaService.eliminarTodos();
 
