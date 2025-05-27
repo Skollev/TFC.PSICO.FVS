@@ -137,13 +137,13 @@ export default function SignUp() {
                     </Button>
 
                     <Box textAlign="center">
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             ¿Ya tienes una cuenta?{' '}
                             <Link href="/login" color="primary">
                                 Inicia sesión.
                             </Link>
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             <Link href="/" color="primary">
                                 Volver al inicio
                             </Link>

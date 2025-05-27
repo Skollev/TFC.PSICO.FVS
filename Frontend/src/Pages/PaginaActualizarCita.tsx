@@ -14,7 +14,7 @@ export default function PaginaActualizarInforme() {
     return (
         <>
             <Header />
-            <Grid height={"100vh"}>
+            <Grid height={"60vh"}>
                 <FormularioModificarCita />
             </Grid>
             <Footer />

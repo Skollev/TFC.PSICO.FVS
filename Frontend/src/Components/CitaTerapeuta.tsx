@@ -123,7 +123,15 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                             Confirmar pago
                         </Button>
                     )}
-                    {!cita.informeSesion?.tarea && (
+                    {cita.informeSesion?.tarea ? (
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            href={`/crearInforme/${cita.informeSesion?.id}`}
+                        >
+                            Actualizar informe
+                        </Button>
+                    ) : (
                         <Button
                             variant="outlined"
                             color="primary"
@@ -132,6 +140,7 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
                             Crear informe
                         </Button>
                     )}
+
                     <Button
                         variant="outlined"
                         color="primary"

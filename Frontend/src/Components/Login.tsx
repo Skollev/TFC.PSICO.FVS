@@ -88,13 +88,13 @@ export default function Login() {
                     </Button>
 
                     <Box textAlign="center">
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             ¿No tienes cuenta?{' '}
                             <Link href="/crear-cuenta" color="primary">
                                 Crea una.
                             </Link>
                         </Typography>
-                        <Typography variant="body2">
+                        <Typography variant="body1">
                             <Link href="/" color="primary">
                                 Volver al inicio
                             </Link>
