@@ -18,7 +18,7 @@ export default function InformacionLegal() {
             justifyContent="center"
             alignItems="center"
             minHeight="100vh"
-            sx={{ backgroundColor: '#fffffff', padding: 2 }}
+            sx={{ padding: 2 }}
         >
             <Paper elevation={3} sx={{ padding: 4, width: 320 }}>
                 <Typography variant="h4" align="center" gutterBottom>

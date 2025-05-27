@@ -3,7 +3,7 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 export default function PaginaConsentimientoInformado() {
     return (
-        <Grid container justifyContent="center" alignItems="center" minHeight="100vh" sx={{ backgroundColor: '#ffffff', padding: 2 }}>
+        <Grid container justifyContent="center" alignItems="center" minHeight="100vh" sx={{ padding: 2 }}>
             <Paper elevation={3} sx={{ padding: 4, maxWidth: 800 }}>
                 <Typography variant="h4" gutterBottom display="flex" alignItems="center" gap={1}>
                     <AssignmentIndIcon color="secondary" />
