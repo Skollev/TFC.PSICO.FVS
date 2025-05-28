@@ -109,7 +109,7 @@ export default function Inicio() {
                         }}
                     >
                         <Divider >
-                            <Typography variant="h4" textAlign="center">
+                            <Typography variant="h3" textAlign="center">
                                 Hola, soy Rocío Delgado
                             </Typography>
                         </Divider>
@@ -139,7 +139,7 @@ export default function Inicio() {
                             Creamos juntas/os un espacio seguro para entender lo que sientes, ponerle nombre y avanzar a tu ritmo, con herramientas que de verdad ayudan.
                         </Typography>
 
-                        <Box>
+                        <Box width={"30%"}>
                             <Boton direccion="/pedirCita" valor="Pide tu cita" />
                         </Box>
                     </Grid>
