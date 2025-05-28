@@ -56,7 +56,7 @@ export default function PrecioCircular({ precio, texto }: Props) {
                     justifyContent: "center",
                 }}
             >
-                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                <Typography variant="h3" sx={{ fontWeight: "bold" }}>
                     {precio}
                 </Typography>
             </Box>
@@ -66,6 +66,7 @@ export default function PrecioCircular({ precio, texto }: Props) {
                 width="200"
                 height="200"
                 style={{
+                    color: "black",
                     position: "absolute",
                     top: 0,
                     left: 0,
