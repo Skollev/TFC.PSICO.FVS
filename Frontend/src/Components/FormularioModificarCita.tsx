@@ -10,6 +10,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs, { Dayjs } from 'dayjs';
@@ -20,6 +21,7 @@ import { citasPorId } from '../Hooks/CitasPorId';
 
 export default function FormularioModificarCita() {
     dayjs.extend(utc);
+    dayjs.extend(timezone);
 
     const { id } = useParams<{ id: string }>();
     const [cita, setCita] = useState<InterfazCita | null>(null);
