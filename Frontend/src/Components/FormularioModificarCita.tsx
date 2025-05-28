@@ -19,9 +19,9 @@ import { useParams } from 'react-router-dom';
 import { citasPorId } from '../Hooks/CitasPorId';
 
 export default function FormularioModificarCita() {
+    dayjs.extend(utc);
 
     const { id } = useParams<{ id: string }>();
-
     const [cita, setCita] = useState<InterfazCita | null>(null);
     const [fechaSesion, setFechaSesion] = useState<Dayjs | null>(dayjs.utc('2022-04-17T15:30'));
     const [linkSesion, setLinkSesion] = useState('');
