@@ -66,7 +66,7 @@ export default function DatosPersonales({ usuario }: Props) {
                     p: 4,
                     borderRadius: 4,
                     border: "2px solid #198754",
-                    width: "70%",
+                    width: { sm: "100%", md: "70%" },
                     bgcolor: "#ffffff",
                 }}
             >
