@@ -11,7 +11,7 @@ export async function pedirCita(
     const pagado = false;
     const fecha = "";
     const link = "";
-
+    const idTerapeuta = 602;
     const token = localStorage.getItem("token");
     const idPaciente = localStorage.getItem("id");
     let paciente: Paciente;
@@ -27,7 +27,7 @@ export async function pedirCita(
     console.log(paciente);
 
     try {
-        terapeuta = await obtenerTerapeuta(552);
+        terapeuta = await obtenerTerapeuta(idTerapeuta);
     } catch (error) {
         console.error("Error en obtenerTerapeuta:", error);
 
@@ -36,7 +36,7 @@ export async function pedirCita(
 
     console.log(terapeuta);
     try {
-        const response = await fetch(`${API_BASE}/cita/552`, {
+        const response = await fetch(`${API_BASE}/cita/${idTerapeuta}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
