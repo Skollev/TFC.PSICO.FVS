@@ -17,13 +17,13 @@ public class PsicoApplication implements CommandLineRunner {
         SpringApplication.run(PsicoApplication.class, args);
     }
 
-    @Autowired
-    private DatabaseCleaner databaseCleaner;
+    // @Autowired
+    // private DatabaseCleaner databaseCleaner;
 
     @Override
     public void run(String... args) throws Exception {
 
-        databaseCleaner.limpiarBaseDeDatos();
+        // databaseCleaner.limpiarBaseDeDatos();
 
         terapeutaService.terapeutaPorDefecto();
     }
