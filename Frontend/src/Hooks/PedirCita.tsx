@@ -27,7 +27,7 @@ export async function pedirCita(
     console.log(paciente);
 
     try {
-        terapeuta = await obtenerTerapeuta(1);
+        terapeuta = await obtenerTerapeuta(502);
     } catch (error) {
         console.error("Error en obtenerTerapeuta:", error);
 
