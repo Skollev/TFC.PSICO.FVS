@@ -312,7 +312,6 @@ export default function Inicio() {
                         display="flex"
                         flexDirection="column"
                         borderRight={{ xs: "none", md: 3 }}
-                        borderColor="#198754"
                         p={2}
                     >
                         <Typography
@@ -320,7 +319,7 @@ export default function Inicio() {
                             p={2}
                             borderRight={{ xs: "none", md: 3 }}
                             borderBottom={3}
-                            borderColor="#198754"
+
                             borderRadius={10}
                             boxShadow={2}
                             sx={{
@@ -339,7 +338,7 @@ export default function Inicio() {
                             p={2}
                             borderRight={{ xs: "none", md: 3 }}
                             borderBottom={3}
-                            borderColor="#198754"
+
                             borderRadius={10}
                             boxShadow={2}
                             sx={{
@@ -358,7 +357,7 @@ export default function Inicio() {
                             p={2}
                             borderRight={{ xs: "none", md: 3 }}
                             borderBottom={3}
-                            borderColor="#198754"
+
                             borderRadius={10}
                             boxShadow={2}
                             sx={{
