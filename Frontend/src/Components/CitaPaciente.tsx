@@ -13,6 +13,8 @@ import PaidIcon from '@mui/icons-material/Paid';
 import MoneyOffIcon from '@mui/icons-material/MoneyOff';
 import { confirmarCita } from '../Hooks/ConfirmarCita';
 import { cancelarCita } from '../Hooks/CancelarCita';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 
 interface Props {
     cita: CitaInterface;
@@ -23,16 +25,12 @@ const CitaPaciente: React.FC<Props> = ({ cita }) => {
     const [openPagar, setOpenPagar] = React.useState(false);
     const [fechaFormateada, setFechaFormateada] = React.useState<string>("");
 
+    dayjs.extend(utc);
     React.useEffect(() => {
         if (cita.fecha != null) {
+            const fechaLocal = dayjs.utc(cita.fecha).local();
             setFechaFormateada(
-                new Date(cita.fecha).toLocaleString("es-ES", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                })
+                fechaLocal.format('DD/MM/YYYY HH:mm')
             );
         } else {
             setFechaFormateada("Por designar");
