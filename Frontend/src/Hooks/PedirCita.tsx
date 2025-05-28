@@ -1,4 +1,4 @@
-import { Paciente, Terapeuta } from "../Models/Interfaces";
+import { InterfazCita, Paciente, Terapeuta } from "../Models/Interfaces";
 import { obtenerPaciente } from "./ObtenerPaciente";
 import { obtenerTerapeuta } from "./ObtenerTerapeuta";
 
@@ -9,6 +9,9 @@ export async function pedirCita(
 ) {
     const confirmada = false;
     const pagado = false;
+    const fecha = "";
+    const link = "";
+
     const token = localStorage.getItem("token");
     const idPaciente = localStorage.getItem("id");
     let paciente: Paciente;
@@ -42,6 +45,8 @@ export async function pedirCita(
             body: JSON.stringify({
                 preferenciaHoraria,
                 tipoTerapia,
+                fecha,
+                link,
                 confirmada,
                 pagado,
             }),
