@@ -121,7 +121,7 @@ export default function DatosPersonales({ usuario }: Props) {
                             ) : (
                                 <Typography variant="h5" mb={1}>
                                     <strong>Da su consentimiento:</strong> Acepta el{" "}
-                                    <Link to="/consentimiento-informado">consentimiento informado  </Link>
+                                    <Link to="/consentimiento-informado">consentimiento informado</Link>
                                     <Button
                                         onClick={() => manejarConsentimiento(usuario as Paciente)}
                                         variant="outlined"
