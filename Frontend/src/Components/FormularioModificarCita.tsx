@@ -48,14 +48,12 @@ export default function FormularioModificarCita() {
         if (!cita || !fechaSesion) return;
 
         try {
-            console.log("Desde backend:", cita.fecha);
-            console.log("Interpretado:", dayjs(cita.fecha).format());
-            const fechaUtc = fechaSesion.utc().format(); // ISO string en UTC
-            cita.fecha = fechaUtc;
-            cita.link = linkSesion;
+            const fechaUtc = dayjs.utc(cita.fecha);
+            const fechaLocal = fechaUtc.local();
 
-            console.log("Hora local:", fechaSesion.format());
-            console.log("Hora UTC:", fechaUtc);
+            console.log("Fecha backend raw:", cita.fecha);
+            console.log("Interpretada UTC:", fechaUtc.format());
+            console.log("Interpretada local:", fechaLocal.format());
 
             await actualizarCita(cita);
         } catch (error) {
