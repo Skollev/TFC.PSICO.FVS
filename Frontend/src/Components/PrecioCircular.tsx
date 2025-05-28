@@ -66,7 +66,6 @@ export default function PrecioCircular({ precio, texto }: Props) {
                 width="200"
                 height="200"
                 style={{
-                    color: "black",
                     position: "absolute",
                     top: 0,
                     left: 0,
@@ -84,7 +83,7 @@ export default function PrecioCircular({ precio, texto }: Props) {
                     />
                 </defs>
                 <text
-                    fill="#198754"
+                    fill="black"
                     fontSize="17"
                     letterSpacing="3px"
                 >
