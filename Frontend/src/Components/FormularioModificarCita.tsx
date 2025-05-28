@@ -64,7 +64,7 @@ export default function FormularioModificarCita() {
                     }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='de'>
                         <form onSubmit={handleSubmit}>
                             <Stack spacing={3}>
 
