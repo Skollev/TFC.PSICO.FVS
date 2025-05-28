@@ -48,7 +48,8 @@ export default function FormularioModificarCita() {
         if (!cita || !fechaSesion) return;
 
         try {
-            // Convertir a UTC antes de guardar
+            console.log("Desde backend:", cita.fecha);
+            console.log("Interpretado:", dayjs(cita.fecha).format());
             const fechaUtc = fechaSesion.utc().format(); // ISO string en UTC
             cita.fecha = fechaUtc;
             cita.link = linkSesion;
@@ -57,7 +58,6 @@ export default function FormularioModificarCita() {
             console.log("Hora UTC:", fechaUtc);
 
             await actualizarCita(cita);
-            window.location.href = "/perfil";
         } catch (error) {
             console.error("Error al actualizar cita:", error);
         }
