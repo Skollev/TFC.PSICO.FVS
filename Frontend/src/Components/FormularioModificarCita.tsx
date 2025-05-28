@@ -34,11 +34,12 @@ export default function FormularioModificarCita() {
                 .then((data) => {
                     setCita(data);
                     setLinkSesion(data.link || '');
-                    setFechaSesion(data.fecha ? dayjs(data.fecha) : null);
+                    setFechaSesion(data.fecha ? dayjs.utc(data.fecha).local() : null);
                 })
                 .catch((err) => console.error("Error al obtener cita:", err));
         }
     }, [id]);
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
