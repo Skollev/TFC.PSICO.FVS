@@ -139,7 +139,7 @@ export default function Inicio() {
                             Creamos juntas/os un espacio seguro para entender lo que sientes, ponerle nombre y avanzar a tu ritmo, con herramientas que de verdad ayudan.
                         </Typography>
 
-                        <Box width={"30%"}>
+                        <Box>
                             <Boton direccion="/pedirCita" valor="Pide tu cita" />
                         </Box>
                     </Grid>
