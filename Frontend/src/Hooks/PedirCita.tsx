@@ -27,7 +27,7 @@ export async function pedirCita(
     console.log(paciente);
 
     try {
-        terapeuta = await obtenerTerapeuta(502);
+        terapeuta = await obtenerTerapeuta(552);
     } catch (error) {
         console.error("Error en obtenerTerapeuta:", error);
 
@@ -36,7 +36,7 @@ export async function pedirCita(
 
     console.log(terapeuta);
     try {
-        const response = await fetch(`${API_BASE}/cita/502`, {
+        const response = await fetch(`${API_BASE}/cita/552`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
