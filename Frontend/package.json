@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@date-io/luxon": "^3.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@fontsource/playfair-display": "^5.2.5",
@@ -19,6 +20,7 @@
     "@mui/styled-engine-sc": "^7.0.2",
     "@mui/x-date-pickers": "^8.4.0",
     "dayjs": "^1.11.13",
+    "luxon": "^3.6.1",
     "material-ui-popup-state": "^5.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import utc from 'dayjs/plugin/utc';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import dayjs, { Dayjs } from 'dayjs';
@@ -22,7 +23,7 @@ export default function FormularioModificarCita() {
     const { id } = useParams<{ id: string }>();
 
     const [cita, setCita] = useState<InterfazCita | null>(null);
-    const [fechaSesion, setFechaSesion] = useState<Dayjs | null>(null);
+    const [fechaSesion, setFechaSesion] = useState<Dayjs | null>(dayjs.utc('2022-04-17T15:30'));
     const [linkSesion, setLinkSesion] = useState('');
 
     useEffect(() => {
