@@ -1,4 +1,4 @@
-import { InterfazCita, Paciente, Terapeuta } from "../Models/Interfaces";
+import { Paciente, Terapeuta } from "../Models/Interfaces";
 import { obtenerPaciente } from "./ObtenerPaciente";
 import { obtenerTerapeuta } from "./ObtenerTerapeuta";
 
