@@ -33,7 +33,7 @@ export async function pedirCita(
 
     console.log(terapeuta);
     try {
-        const response = await fetch(`${API_BASE}/cita/1`, {
+        const response = await fetch(`${API_BASE}/cita/502`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

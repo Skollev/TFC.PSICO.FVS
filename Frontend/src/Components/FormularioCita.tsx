@@ -62,8 +62,8 @@ const FormularioCita: React.FC = () => {
                                 required
                                 fullWidth
                             >
-                                <MenuItem value="individual">Individual</MenuItem>
-                                <MenuItem value="pareja">Pareja</MenuItem>
+                                <MenuItem value="individual">Individual - 35€</MenuItem>
+                                <MenuItem value="pareja">Pareja - 45€</MenuItem>
                             </TextField>
 
                             <TextField
