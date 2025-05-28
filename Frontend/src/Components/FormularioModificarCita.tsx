@@ -64,7 +64,7 @@ export default function FormularioModificarCita() {
                     }}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='de'>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <form onSubmit={handleSubmit}>
                             <Stack spacing={3}>
 
@@ -80,6 +80,7 @@ export default function FormularioModificarCita() {
                                 <DateTimePicker
                                     label="Fecha y hora de la sesión"
                                     value={fechaSesion}
+                                    timezone="Europe/Paris"
                                     onChange={(newValue) => setFechaSesion(newValue)}
                                 />
 
