@@ -11,7 +11,7 @@ export async function pedirCita(
     const pagado = false;
     const fecha = "";
     const link = "";
-    const idTerapeuta = 652;
+    const idTerapeuta = 702;
     const token = localStorage.getItem("token");
     const idPaciente = localStorage.getItem("id");
     let paciente: Paciente;
